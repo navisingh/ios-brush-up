@@ -22,6 +22,8 @@
 		5D462F9D14C6098700DBC44A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D462F9B14C6098700DBC44A /* InfoPlist.strings */; };
 		5D462FA014C6098700DBC44A /* RatingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D462F9F14C6098700DBC44A /* RatingsTests.m */; };
 		5D462FAA14C60C0D00DBC44A /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 5D462FA914C60C0D00DBC44A /* Images */; };
+		5D8378E714C6116100BF6F6C /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8378E614C6116100BF6F6C /* Player.m */; };
+		5D8378EA14C615D900BF6F6C /* PlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8378E914C615D900BF6F6C /* PlayersViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		5D462F9E14C6098700DBC44A /* RatingsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RatingsTests.h; sourceTree = "<group>"; };
 		5D462F9F14C6098700DBC44A /* RatingsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatingsTests.m; sourceTree = "<group>"; };
 		5D462FA914C60C0D00DBC44A /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		5D8378E514C6116100BF6F6C /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		5D8378E614C6116100BF6F6C /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		5D8378E814C615D900BF6F6C /* PlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayersViewController.h; sourceTree = "<group>"; };
+		5D8378E914C615D900BF6F6C /* PlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayersViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,10 @@
 				5D462F8914C6098700DBC44A /* ratingViewController.h */,
 				5D462F8A14C6098700DBC44A /* ratingViewController.m */,
 				5D462F7814C6098600DBC44A /* Supporting Files */,
+				5D8378E514C6116100BF6F6C /* Player.h */,
+				5D8378E614C6116100BF6F6C /* Player.m */,
+				5D8378E814C615D900BF6F6C /* PlayersViewController.h */,
+				5D8378E914C615D900BF6F6C /* PlayersViewController.m */,
 			);
 			path = Ratings;
 			sourceTree = "<group>";
@@ -268,6 +278,8 @@
 				5D462F7E14C6098600DBC44A /* main.m in Sources */,
 				5D462F8214C6098600DBC44A /* ratingAppDelegate.m in Sources */,
 				5D462F8B14C6098700DBC44A /* ratingViewController.m in Sources */,
+				5D8378E714C6116100BF6F6C /* Player.m in Sources */,
+				5D8378EA14C615D900BF6F6C /* PlayersViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +459,7 @@
 				5D462FA514C6098700DBC44A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D462FA614C6098700DBC44A /* Build configuration list for PBXNativeTarget "RatingsTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +468,7 @@
 				5D462FA814C6098700DBC44A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,14 +7,51 @@
 //
 
 #import "ratingAppDelegate.h"
+#import "Player.h"
+#import "PlayersViewController.h"  
+
 
 @implementation ratingAppDelegate
 
 @synthesize window = _window;
 
+- (void) addPlayers
+{
+	players = [NSMutableArray arrayWithCapacity:20];
+
+	Player *player = [[Player alloc] init];
+	player.name = @"Bill Evans";
+	player.game = @"Tic-Tac-Toe";
+	player.rating = 4;
+	[players addObject:player];
+    
+	player = [[Player alloc] init];
+	player.name = @"Oscar Peterson";
+	player.game = @"Spin the Bottle";
+	player.rating = 5;
+	[players addObject:player];
+	
+    player = [[Player alloc] init];
+	player.name = @"Dave Brubeck";
+	player.game = @"Texas Hold’em Poker";
+	player.rating = 2;
+	[players addObject:player];
+    
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self addPlayers];
+    
+    //the intialViewController in the storyboard is the rootViewController.
+	UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    
+    //we know that the first tab is the navigation controller containing the tableviewcontroller as its first item.  containing the players.
+	UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:0];
+	PlayersViewController *playersViewController =  [[navigationController viewControllers] objectAtIndex:0];
+	playersViewController.players = players;
+
     return YES;
 }
 							

@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ratingAppDelegate : UIResponder <UIApplicationDelegate>
+{
+    NSMutableArray *players;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+
+- (void) addPlayers;
 
 @end
