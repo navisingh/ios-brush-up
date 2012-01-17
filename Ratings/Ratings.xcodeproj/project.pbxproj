@@ -47,6 +47,7 @@
 		5D83792914C62F2200BF6F6C /* Gestures@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D83791114C62F2200BF6F6C /* Gestures@2x.png */; };
 		5D83792A14C62F2200BF6F6C /* Players.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D83791214C62F2200BF6F6C /* Players.png */; };
 		5D83792B14C62F2200BF6F6C /* Players@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D83791314C62F2200BF6F6C /* Players@2x.png */; };
+		5D83792E14C636EE00BF6F6C /* PlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D83792D14C636EE00BF6F6C /* PlayerCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		5D83791114C62F2200BF6F6C /* Gestures@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gestures@2x.png"; sourceTree = "<group>"; };
 		5D83791214C62F2200BF6F6C /* Players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Players.png; sourceTree = "<group>"; };
 		5D83791314C62F2200BF6F6C /* Players@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Players@2x.png"; sourceTree = "<group>"; };
+		5D83792C14C636EE00BF6F6C /* PlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerCell.h; sourceTree = "<group>"; };
+		5D83792D14C636EE00BF6F6C /* PlayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +181,8 @@
 				5D8378E614C6116100BF6F6C /* Player.m */,
 				5D8378E814C615D900BF6F6C /* PlayersViewController.h */,
 				5D8378E914C615D900BF6F6C /* PlayersViewController.m */,
+				5D83792C14C636EE00BF6F6C /* PlayerCell.h */,
+				5D83792D14C636EE00BF6F6C /* PlayerCell.m */,
 				5D462F7814C6098600DBC44A /* Supporting Files */,
 			);
 			path = Ratings;
@@ -380,6 +385,7 @@
 				5D462F8B14C6098700DBC44A /* ratingViewController.m in Sources */,
 				5D8378E714C6116100BF6F6C /* Player.m in Sources */,
 				5D8378EA14C615D900BF6F6C /* PlayersViewController.m in Sources */,
+				5D83792E14C636EE00BF6F6C /* PlayerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

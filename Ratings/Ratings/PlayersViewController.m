@@ -8,6 +8,7 @@
 
 #import "PlayersViewController.h"
 #import "Player.h"
+#import "PlayerCell.h"
 
 @implementation PlayersViewController
 @synthesize players;
@@ -115,19 +116,24 @@
 //    }
     
 
-	Player *player = [self.players objectAtIndex:indexPath.row];
+	Player *player = (Player *)[self.players objectAtIndex:indexPath.row];
     
     //This is if we use a subtitle type of TableViewCell.
 	//cell.textLabel.text = player.name;
 	//cell.detailTextLabel.text = player.game;
     
-    UILabel *nameLabel = (UILabel *)[cell viewWithTag:100];
-    UILabel *gameLabel = (UILabel *)[cell viewWithTag:101];
-    UIImageView *ratingImageView = (UIImageView *)[cell viewWithTag:102];
+    // UILabel *nameLabel = (UILabel *)[cell viewWithTag:100];
+    // UILabel *gameLabel = (UILabel *)[cell viewWithTag:101];
+    // UIImageView *ratingImageView = (UIImageView *)[cell viewWithTag:102];
+//    nameLabel.text = player.name;
+//    gameLabel.text = player.game;
+//    ratingImageView.image = [self imageForRating:player.rating];
     
-    nameLabel.text = player.name;
-    gameLabel.text = player.game;
-    ratingImageView.image = [self imageForRating:player.rating];
+    PlayerCell *playerCell = (PlayerCell *)cell;
+    
+    playerCell.nameLabel.text = player.name;
+    playerCell.gameLabel.text = player.game;
+    playerCell.ratingImageView.image = [self imageForRating:player.rating];
     
     return cell;
 }
