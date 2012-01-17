@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="JrX-1G-rGC">
+    <dependencies>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <viewController id="2" customClass="StockViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xvT-6Y-42P">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="WjB-T5-Eip">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="2xq-9K-AHN"/>
+                                    <outlet property="delegate" destination="2" id="G2K-dn-F8O"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stocks" id="cdL-yO-EGY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A7C-B6-rPk"/>
+                    </navigationItem>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="547" y="189"/>
+        </scene>
+        <scene sceneID="AIf-R4-A3i">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i5q-2w-RkI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="detail" id="3o9-Co-Z20" userLabel="Details" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CXx-UN-mbk">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stock" lineBreakMode="tailTruncation" minimumFontSize="10" id="R6K-59-DRb">
+                                <rect key="frame" x="25" y="176" width="270" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="URL" lineBreakMode="tailTruncation" minimumFontSize="10" id="IDJ-IO-EN8">
+                                <rect key="frame" x="25" y="273" width="270" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KwD-Td-pAc">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Raa-gu-ey4"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="H8g-YS-y47"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="stockLabel" destination="R6K-59-DRb" id="Nze-dP-WoO"/>
+                        <outlet property="stockURL" destination="IDJ-IO-EN8" id="Slj-Eh-PTP"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1429" y="-20"/>
+        </scene>
+        <scene sceneID="Ulx-xN-zfu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="En3-gR-198" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="browser" id="koP-2P-exA" userLabel="Web Page" customClass="BrowserViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kZf-Ic-7Un">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="pat-IB-P2E">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" id="IpX-r2-Y9s"/>
+                                    <barButtonItem systemItem="refresh" id="hHu-1h-ECq"/>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" id="hQA-cB-4FK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="koP-2P-exA" id="AsP-qU-xcq"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nxz-H9-GW1">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="fXH-p2-YYo"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="toolbar" destination="pat-IB-P2E" id="Zgd-zR-9Sz"/>
+                        <outlet property="webView" destination="hQA-cB-4FK" id="HL0-oE-xns"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1429" y="600"/>
+        </scene>
+        <scene sceneID="YFg-5u-taG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Phy-dK-CyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="JrX-1G-rGC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ltj-Dc-vS4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="muH-5f-hcI"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="182" y="189"/>
+        </scene>
+        <scene sceneID="kZS-oi-hed">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dI-4e-kpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="kIZ-V3-2Vm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="a6g-Tr-2Lx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3o9-Co-Z20" kind="relationship" relationship="rootViewController" id="GR5-cO-fV9"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="991" y="-26"/>
+        </scene>
+        <scene sceneID="9bK-NC-eAh">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ej-Wq-Xp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="Y6f-n6-aAM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Mx8-Nx-fCB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="koP-2P-exA" kind="relationship" relationship="rootViewController" id="3R5-sx-uq1"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="991" y="594"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="BrowserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BrowserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="stockLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="stockURL" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StockViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StockViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IBM</key>
+	<string>http://finance.yahoo.com/q?s=ibm&amp;ql=1</string>
+	<key>Intel</key>
+	<string>http://finance.yahoo.com/q?s=intc&amp;ql=1</string>
+	<key>Apple</key>
+	<string>http://finance.yahoo.com/q?s=aapl&amp;ql=1</string>
+	<key>Microsoft</key>
+	<string>http://finance.yahoo.com/q?s=msft&amp;ql=1</string>
+</dict>
+</plist>
