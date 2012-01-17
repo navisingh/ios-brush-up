@@ -7,7 +7,7 @@
 //
 
 #import "PlayersViewController.h"
-
+#import "Player.h"
 
 @implementation PlayersViewController
 @synthesize players;
@@ -91,14 +91,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+//  static NSString *CellIdentifier = @"Cell";    
+    static NSString *CellIdentifier = @"PlayerCell";
+
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+// The old way of adding data to cells.
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    // Configure the cell...
+
+	Player *player = [self.players objectAtIndex:indexPath.row];
+	cell.textLabel.text = player.name;
+	cell.detailTextLabel.text = player.game;
     
     return cell;
 }
