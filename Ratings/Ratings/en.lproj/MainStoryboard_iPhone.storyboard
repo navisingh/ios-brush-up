@@ -29,7 +29,7 @@
                             <outlet property="delegate" destination="Uqf-Ub-pe6" id="rM3-eY-N5a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jwE-xh-PaO"/>
+                    <navigationItem key="navigationItem" title="Players" id="jwE-xh-PaO"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="644" y="-110"/>
@@ -61,7 +61,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DaR-dd-t6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="IlH-eK-8ck" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="h4V-ee-CyL">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
