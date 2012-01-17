@@ -44,6 +44,7 @@
         {
             [fileManager removeItemAtPath:path error:&error];
         }
+ 
         NSString *bundle = [[NSBundle mainBundle] pathForResource:@"stocks" ofType:@"plist"];
         [fileManager copyItemAtPath:bundle toPath: path error:&error]; //6
     }
