@@ -89,6 +89,19 @@
     return [self.players count];
 }
 
+- (UIImage *)imageForRating:(int)rating
+{
+	switch (rating)
+	{
+		case 1: return [UIImage imageNamed:@"1StarSmall.png"];
+		case 2: return [UIImage imageNamed:@"2StarsSmall.png"];
+		case 3: return [UIImage imageNamed:@"3StarsSmall.png"];
+		case 4: return [UIImage imageNamed:@"4StarsSmall.png"];
+		case 5: return [UIImage imageNamed:@"5StarsSmall.png"];
+	}
+	return nil;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //  static NSString *CellIdentifier = @"Cell";    
@@ -103,8 +116,18 @@
     
 
 	Player *player = [self.players objectAtIndex:indexPath.row];
-	cell.textLabel.text = player.name;
-	cell.detailTextLabel.text = player.game;
+    
+    //This is if we use a subtitle type of TableViewCell.
+	//cell.textLabel.text = player.name;
+	//cell.detailTextLabel.text = player.game;
+    
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:100];
+    UILabel *gameLabel = (UILabel *)[cell viewWithTag:101];
+    UIImageView *ratingImageView = (UIImageView *)[cell viewWithTag:102];
+    
+    nameLabel.text = player.name;
+    gameLabel.text = player.game;
+    ratingImageView.image = [self imageForRating:player.rating];
     
     return cell;
 }
