@@ -1,19 +1,16 @@
 //
-//  PlayersViewController.m
+//  PlayerDetailsViewController.m
 //  Ratings
 //
 //  Created by Navi Singh on 1/17/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "PlayersViewController.h"
-#import "Player.h"
-#import "PlayerCell.h"
 #import "PlayerDetailsViewController.h"
 
-@implementation PlayersViewController
 
-@synthesize players;
+@implementation PlayerDetailsViewController
+@synthesize delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -82,93 +79,41 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.players count];
-}
-
-- (UIImage *)imageForRating:(int)rating
-{
-	switch (rating)
-	{
-		case 1: return [UIImage imageNamed:@"1StarSmall.png"];
-		case 2: return [UIImage imageNamed:@"2StarsSmall.png"];
-		case 3: return [UIImage imageNamed:@"3StarsSmall.png"];
-		case 4: return [UIImage imageNamed:@"4StarsSmall.png"];
-		case 5: return [UIImage imageNamed:@"5StarsSmall.png"];
-	}
-	return nil;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//  static NSString *CellIdentifier = @"Cell";    
-    static NSString *CellIdentifier = @"PlayerCell";
-
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-
-// The old way of adding data to cells.
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//    }
+    static NSString *CellIdentifier = @"Cell";
     
-
-	Player *player = (Player *)[self.players objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
-    //This is if we use a subtitle type of TableViewCell.
-	//cell.textLabel.text = player.name;
-	//cell.detailTextLabel.text = player.game;
-    
-    // UILabel *nameLabel = (UILabel *)[cell viewWithTag:100];
-    // UILabel *gameLabel = (UILabel *)[cell viewWithTag:101];
-    // UIImageView *ratingImageView = (UIImageView *)[cell viewWithTag:102];
-//    nameLabel.text = player.name;
-//    gameLabel.text = player.game;
-//    ratingImageView.image = [self imageForRating:player.rating];
-    
-    PlayerCell *playerCell = (PlayerCell *)cell;
-    
-    playerCell.nameLabel.text = player.name;
-    playerCell.gameLabel.text = player.game;
-    playerCell.ratingImageView.image = [self imageForRating:player.rating];
+    // Configure the cell...
     
     return cell;
 }
 
-//This method enables swipe to delete on a table.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	if (editingStyle == UITableViewCellEditingStyleDelete)
-	{
-		[self.players removeObjectAtIndex:indexPath.row];
-		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-	}   
-}
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (IBAction)cancel :(id)sender
 {
-	if ([segue.identifier isEqualToString:@"AddPlayer"])
-	{
-		UINavigationController *navigationController = segue.destinationViewController;
-		PlayerDetailsViewController*playerDetailsViewController = [[navigationController viewControllers] objectAtIndex:0];
-		playerDetailsViewController.delegate = self;
-	}
+    [self.delegate playerDetailsViewControllerDidCancel:self];
 }
-
-- (void) playerDetailsViewControllerDidCancel: (PlayerDetailsViewController *)controller
+- (IBAction)done :(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate playerDetailsViewControllerDidSave:self];
 }
-- (void) playerDetailsViewControllerDidSave:(PlayerDetailsViewController *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 
 /*
 // Override to support conditional editing of the table view.
