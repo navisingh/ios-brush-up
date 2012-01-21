@@ -443,6 +443,7 @@
 				FC1FF1EC144FD76F008429F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC1FF1ED144FD76F008429F9 /* Build configuration list for PBXNativeTarget "StoryboardTutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +452,7 @@
 				FC1FF1EF144FD76F008429F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

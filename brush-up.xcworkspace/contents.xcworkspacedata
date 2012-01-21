@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../3rdParty/gData-source/Examples/SpreadsheetSample/SpreadsheetSample.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:idev-recipes/VerticalSwipeArticles/VerticalSwipeArticles.xcodeproj">
    </FileRef>
    <FileRef
