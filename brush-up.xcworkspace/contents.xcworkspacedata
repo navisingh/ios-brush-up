@@ -2,7 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:idev-recipes/VerticalSwipeArticles/VerticalSwipeArticles.xcodeproj">
+      location = "group:testFacebookConnect/testFacebookConnect.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../gdata-objectivec-client/Examples/SpreadsheetSample/SpreadsheetSample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:VerticalSwipeArticles/VerticalSwipeArticles.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Ratings/Ratings.xcodeproj">
