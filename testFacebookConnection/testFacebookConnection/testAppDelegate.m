@@ -11,10 +11,19 @@
 @implementation testAppDelegate
 
 @synthesize window = _window;
+@synthesize facebook;
+
+- (void)dealloc
+{
+    [_window release];
+    [super dealloc];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    facebook = [[Facebook alloc] initWithAppId:@"112986615441031" andDelegate:self];
+    
     return YES;
 }
 							
