@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../3rdParty/gData-source/Examples/SpreadsheetSample/SpreadsheetSample.xcodeproj">
+      location = "group:../3rdParty/facebook-ios-sdk/sample/Hackbook/Hackbook.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:idev-recipes/VerticalSwipeArticles/VerticalSwipeArticles.xcodeproj">
+      location = "group:../3rdParty/gData-source/Examples/SpreadsheetSample/SpreadsheetSample.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Ratings/Ratings.xcodeproj">
