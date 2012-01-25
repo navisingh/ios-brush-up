@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1891737014D080B600519909 /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D83797014C9F01800BF6F6C /* libGDataTouchStaticLib.a */; };
 		5D2B776014C0DAE1008A3748 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B775F14C0DAE1008A3748 /* UIKit.framework */; };
 		5D2B776214C0DAE1008A3748 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B776114C0DAE1008A3748 /* Foundation.framework */; };
 		5D2B776414C0DAE1008A3748 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B776314C0DAE1008A3748 /* CoreGraphics.framework */; };
@@ -32,7 +33,6 @@
 		5D2B77B214C0F9BD008A3748 /* right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D2B77AE14C0F9BD008A3748 /* right@2x.png */; };
 		5D83797B14C9F06400BF6F6C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D83797A14C9F06400BF6F6C /* Security.framework */; };
 		5D83797D14C9F07500BF6F6C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D83797C14C9F07500BF6F6C /* SystemConfiguration.framework */; };
-		5D8379A214CA224F00BF6F6C /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D83797014C9F01800BF6F6C /* libGDataTouchStaticLib.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D8379A214CA224F00BF6F6C /* libGDataTouchStaticLib.a in Frameworks */,
+				1891737014D080B600519909 /* libGDataTouchStaticLib.a in Frameworks */,
 				5D83797D14C9F07500BF6F6C /* SystemConfiguration.framework in Frameworks */,
 				5D83797B14C9F06400BF6F6C /* Security.framework in Frameworks */,
 				5D2B776014C0DAE1008A3748 /* UIKit.framework in Frameworks */,
@@ -154,8 +154,6 @@
 		5D2B775014C0DAE1008A3748 = {
 			isa = PBXGroup;
 			children = (
-				5D83797C14C9F07500BF6F6C /* SystemConfiguration.framework */,
-				5D83797A14C9F06400BF6F6C /* Security.framework */,
 				5D83796514C9F01800BF6F6C /* GData.xcodeproj */,
 				5D2B77A314C0E466008A3748 /* Resources */,
 				5D2B776514C0DAE1008A3748 /* Stocks */,
@@ -177,6 +175,8 @@
 		5D2B775E14C0DAE1008A3748 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D83797C14C9F07500BF6F6C /* SystemConfiguration.framework */,
+				5D83797A14C9F06400BF6F6C /* Security.framework */,
 				5D2B775F14C0DAE1008A3748 /* UIKit.framework */,
 				5D2B776114C0DAE1008A3748 /* Foundation.framework */,
 				5D2B776314C0DAE1008A3748 /* CoreGraphics.framework */,

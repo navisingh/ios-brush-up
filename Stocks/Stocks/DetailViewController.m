@@ -127,6 +127,15 @@
     [self fetchFeedOfSpreadsheets];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == password) {
+        
+        [textField resignFirstResponder];
+        [self connect:self];
+    }
+    return NO;
+}
+
 
 // get a spreadsheet service object with the current username/password
 //
