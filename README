@@ -1,0 +1,1 @@
+Gdata spreadsheet gotcha.  If you are using the "get list of entries" approach as opposed to the "get cells" the list ends with the first blank row.   
