@@ -283,11 +283,11 @@
        
         NSURL *feedURL;
         
-        if (0) 
+        if (1) 
         {
             feedURL = [[worksheet_ cellsLink] URL];
             
-            if (0) {
+            if (1) {
                 [service fetchFeedWithURL:feedURL
                                  delegate:self
                         didFinishSelector:@selector(entriesCellsTicket:finishedWithFeed:error:)];
@@ -384,21 +384,52 @@
     GDataFeedSpreadsheetCell *feed = (GDataFeedSpreadsheetCell *)entryFeed_;
     NSInteger rows = [feed rowCount];
     NSInteger cols = [feed columnCount];
+    bool containsHoldings = false;
+    NSInteger prevRowNo = -1;
+    NSString *security;
     for (GDataEntrySpreadsheetCell *entry in [feed entries]) {
         GDataSpreadsheetCell *cell = [entry cell];
         NSInteger rowNo = [cell row]-1;
         NSInteger colNo = [cell column]-1;
         
+        if (prevRowNo != rowNo) {
+            containsHoldings = false;
+            prevRowNo = rowNo;
+            security = @"";
+        }
+        
         NSString *resultStr = [cell resultString]; // like "3.1415926"
         NSString *inputStr = [cell inputString]; // like "=pi()"
         NSString *title = [[entry title] stringValue]; // like "A3"
+
+ //       if ([title isEqualToString:@""])
+ //           continue;
         
-        if ([title isEqualToString:@""])
-            continue;
+        if (colNo == 3 && ![resultStr isEqualToString:@""]) {
+            security = resultStr;
+       }
+        if (colNo == 1) {
+            NSString *resultStr = [cell resultString]; // like "3.1415926"
+            if ([resultStr isEqualToString:@"Holdings"]) {
+                containsHoldings = true;
+            }
+        }
+ //       else if(colNo > 2 && !containsHoldings)
+ //           continue;
         
-        displayStr = [NSString stringWithFormat:@"%@: %@  %@",
-                      title, inputStr, (resultStr ? resultStr : @"")];  
-        NSLog(@"%@", displayStr);
+        
+        if (containsHoldings && colNo == 11) {
+            displayStr = [NSString stringWithFormat:@"%@ %@", security, resultStr];
+ //           displayStr = [NSString stringWithFormat:@"%@ (%d, %d) %@: %@  %@",
+ //                         security, rowNo, colNo,
+ //                         title, inputStr, (resultStr ? resultStr : @"")];  
+            NSLog(@"%@", displayStr);
+        }
+//        else
+//            displayStr = [NSString stringWithFormat:@"(%d, %d) %@: %@  %@",
+//                          rowNo, colNo,
+//                          title, inputStr, (resultStr ? resultStr : @"")];  
+
     }
 }
 

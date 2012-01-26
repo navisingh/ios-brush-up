@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface testViewController : UIViewController
+- (IBAction)connectusingFB:(id)sender;
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180E922D14D0AF1A009CA802 /* DataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E922C14D0AF1A009CA802 /* DataSet.m */; };
 		18FE8C4314CE18AD0050C6E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FE8C4214CE18AD0050C6E4 /* UIKit.framework */; };
 		18FE8C4514CE18AD0050C6E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FE8C4414CE18AD0050C6E4 /* Foundation.framework */; };
 		18FE8C4714CE18AD0050C6E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FE8C4614CE18AD0050C6E4 /* CoreGraphics.framework */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180E922B14D0AF1A009CA802 /* DataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSet.h; sourceTree = "<group>"; };
+		180E922C14D0AF1A009CA802 /* DataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSet.m; sourceTree = "<group>"; };
 		18FE8C3E14CE18AD0050C6E4 /* testFacebookConnection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testFacebookConnection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FE8C4214CE18AD0050C6E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		18FE8C4414CE18AD0050C6E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 		18FE8C4814CE18AD0050C6E4 /* testFacebookConnection */ = {
 			isa = PBXGroup;
 			children = (
+				180E922B14D0AF1A009CA802 /* DataSet.h */,
+				180E922C14D0AF1A009CA802 /* DataSet.m */,
 				18FE8C5114CE18AD0050C6E4 /* testAppDelegate.h */,
 				18FE8C5214CE18AD0050C6E4 /* testAppDelegate.m */,
 				18FE8C5414CE18AD0050C6E4 /* MainStoryboard.storyboard */,
@@ -255,6 +260,7 @@
 				18FE8CA014CE351B0050C6E4 /* SBJsonBase.m in Sources */,
 				18FE8CA114CE351B0050C6E4 /* SBJsonParser.m in Sources */,
 				18FE8CA214CE351B0050C6E4 /* SBJsonWriter.m in Sources */,
+				180E922D14D0AF1A009CA802 /* DataSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +372,7 @@
 				18FE8C5E14CE18AD0050C6E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

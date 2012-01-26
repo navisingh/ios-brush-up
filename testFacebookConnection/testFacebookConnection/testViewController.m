@@ -57,4 +57,7 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)connectusingFB:(id)sender {
+    
+}
 @end

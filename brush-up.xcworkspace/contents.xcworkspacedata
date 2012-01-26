@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:testFacebookConnection/testFacebookConnection.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:../3rdParty/facebook-ios-sdk/sample/Hackbook/Hackbook.xcodeproj">
    </FileRef>
    <FileRef
