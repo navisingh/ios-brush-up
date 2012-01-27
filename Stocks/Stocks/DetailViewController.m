@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "GData-ARC.h"
+#import "KeychainItemWrapper.h"
 
 @interface DetailViewController (PrivateMethods)
 
@@ -123,6 +124,11 @@
     }
     
     username.text = u;
+    
+    KeychainItemWrapper *keychain = 
+    [[KeychainItemWrapper alloc] initWithIdentifier:@"TestAppLoginData" accessGroup:nil];
+    [keychain setObject:[username text] forKey:(__bridge id)kSecAttrAccount];
+    [keychain setObject:[password text] forKey:(__bridge id)kSecValueData];
   
     [self fetchFeedOfSpreadsheets];
 }

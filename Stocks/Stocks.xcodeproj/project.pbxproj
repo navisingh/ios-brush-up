@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1801083D14D22FA200C8501D /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1801083C14D22FA200C8501D /* KeychainItemWrapper.m */; };
+		187BA23414D232A800C16BC3 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BA23314D232A800C16BC3 /* KeychainItemWrapper.m */; };
 		1891737014D080B600519909 /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D83797014C9F01800BF6F6C /* libGDataTouchStaticLib.a */; };
 		5D2B776014C0DAE1008A3748 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B775F14C0DAE1008A3748 /* UIKit.framework */; };
 		5D2B776214C0DAE1008A3748 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B776114C0DAE1008A3748 /* Foundation.framework */; };
@@ -89,8 +89,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1801083B14D22FA200C8501D /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = Stocks/KeychainItemWrapper.h; sourceTree = "<group>"; };
-		1801083C14D22FA200C8501D /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = Stocks/KeychainItemWrapper.m; sourceTree = "<group>"; };
+		187BA23214D232A800C16BC3 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		187BA23314D232A800C16BC3 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		5D2B775B14C0DAE1008A3748 /* Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2B775F14C0DAE1008A3748 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D2B776114C0DAE1008A3748 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,8 +157,6 @@
 		5D2B775014C0DAE1008A3748 = {
 			isa = PBXGroup;
 			children = (
-				1801083B14D22FA200C8501D /* KeychainItemWrapper.h */,
-				1801083C14D22FA200C8501D /* KeychainItemWrapper.m */,
 				5D83796514C9F01800BF6F6C /* GData.xcodeproj */,
 				5D2B77A314C0E466008A3748 /* Resources */,
 				5D2B776514C0DAE1008A3748 /* Stocks */,
@@ -193,6 +191,8 @@
 		5D2B776514C0DAE1008A3748 /* Stocks */ = {
 			isa = PBXGroup;
 			children = (
+				187BA23214D232A800C16BC3 /* KeychainItemWrapper.h */,
+				187BA23314D232A800C16BC3 /* KeychainItemWrapper.m */,
 				5D2B776E14C0DAE1008A3748 /* StockAppDelegate.h */,
 				5D2B776F14C0DAE1008A3748 /* StockAppDelegate.m */,
 				5D2B777114C0DAE1008A3748 /* MainStoryboard_iPhone.storyboard */,
@@ -428,7 +428,7 @@
 				5D2B777914C0DAE2008A3748 /* StockViewController.m in Sources */,
 				5D2B779E14C0DFC9008A3748 /* DetailViewController.m in Sources */,
 				5D2B77AA14C0F7CE008A3748 /* BrowserViewController.m in Sources */,
-				1801083D14D22FA200C8501D /* KeychainItemWrapper.m in Sources */,
+				187BA23414D232A800C16BC3 /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
