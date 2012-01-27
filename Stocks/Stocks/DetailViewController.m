@@ -125,11 +125,20 @@
     
     username.text = u;
     
-    KeychainItemWrapper *keychain = 
-    [[KeychainItemWrapper alloc] initWithIdentifier:@"TestAppLoginData" accessGroup:nil];
-    [keychain setObject:[username text] forKey:(__bridge id)kSecAttrAccount];
-    [keychain setObject:[password text] forKey:(__bridge id)kSecValueData];
+    {
+        KeychainItemWrapper *keychain = 
+        [[KeychainItemWrapper alloc] initWithIdentifier:@"TestAppLoginData" accessGroup:nil];
+        [keychain setObject:[username text] forKey:(__bridge id)kSecAttrAccount];
+        [keychain setObject:[password text] forKey:(__bridge id)kSecValueData];
+    }
   
+    {
+        KeychainItemWrapper *keychain = 
+        [[KeychainItemWrapper alloc] initWithIdentifier:@"TestAppLoginData" accessGroup:nil];
+        NSString *uu = [keychain objectForKey:(__bridge id)kSecAttrAccount];
+        NSString *pp = [keychain objectForKey:(__bridge id)kSecValueData];
+    }
+    
     [self fetchFeedOfSpreadsheets];
 }
 
