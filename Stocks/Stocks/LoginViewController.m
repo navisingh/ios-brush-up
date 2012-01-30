@@ -42,13 +42,16 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Hide the back button.
+//    self.navigationItem.hidesBackButton = YES;
 }
-*/
+
 /*
 - (void)viewDidUnload
 {
@@ -81,28 +84,27 @@
         
         [textField resignFirstResponder];
         
-//        [self done:self];
-
         [self.navigationController popViewControllerAnimated:YES];
     }
     return NO;
 }
 
-
 - (IBAction)done:(id)sender 
 {
+    NSString *user = [username text];
+    NSString *pass = [password text];
     {
         KeychainItemWrapper *keychain = 
         [[KeychainItemWrapper alloc] initWithIdentifier:@"GoogleLoginData" accessGroup:nil];
-        [keychain setObject:[username text] forKey:(__bridge id)kSecAttrAccount];
-        [keychain setObject:[password text] forKey:(__bridge id)kSecValueData];
+        [keychain setObject:user forKey:(__bridge id)kSecAttrAccount];
+        [keychain setObject:pass forKey:(__bridge id)kSecValueData];
     }
 
     StockAppDelegate *delegate = (StockAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (![[password text] isEqualToString:@""]) 
     {
-        delegate.googleSpreadsheetWrapper.username = [username text];
-        delegate.googleSpreadsheetWrapper.password = [password text];
+        delegate.googleSpreadsheetWrapper.username = user;
+        delegate.googleSpreadsheetWrapper.password = pass;
     }
 }
 
