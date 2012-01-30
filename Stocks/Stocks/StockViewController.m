@@ -123,8 +123,6 @@
 {
     if (1) {
         DetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"detail"];
-        detail.stock = [datasource objectAtIndex:indexPath.row];
-        detail.url = [stocks objectForKey:detail.stock];
         [self.navigationController pushViewController:detail animated:YES];
     }
     else

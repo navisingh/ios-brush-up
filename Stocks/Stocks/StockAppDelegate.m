@@ -7,14 +7,18 @@
 //
 
 #import "StockAppDelegate.h"
+#import "GoogleSpreadSheetWrapper.h"
 
 @implementation StockAppDelegate
 
 @synthesize window = _window;
+@synthesize googleSpreadsheetWrapper;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    googleSpreadsheetWrapper = [[GoogleSpreadsheetWrapper alloc] init];
+    
     return YES;
 }
 							

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class GoogleSpreadsheetWrapper;
+
 @interface StockAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) GoogleSpreadsheetWrapper *googleSpreadsheetWrapper;
 
 @end
