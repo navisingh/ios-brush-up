@@ -137,7 +137,13 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     if (WAZAAP_MODE) {
         htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
         htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- title -->" withString:[[appData objectAtIndex:index] objectForKey:@"title"]];
-//        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- icon -->" withString:[[[[appData objectAtIndex:index] objectForKey:@"im:image"] objectAtIndex:0] objectForKey:@"label"]];
+        @try {
+            htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- icon -->" withString:[[appData objectAtIndex:index] objectForKey:@"image"]];
+        }
+        @catch (NSException *exception) {
+         }
+        @finally {
+        }
         htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- content -->" withString:[[appData objectAtIndex:index] objectForKey:@"description"] ];
     }
     else

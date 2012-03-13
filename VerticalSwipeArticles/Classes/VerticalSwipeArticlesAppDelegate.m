@@ -159,11 +159,17 @@
 {
     if (WAZAAP_MODE) {
         NSString* topAppsString = [[[NSString alloc] initWithData:topAppsData2 encoding:NSUTF8StringEncoding] autorelease]; 
-        self.topAppsData2 = nil;
+ //       self.topAppsData2 = nil;
         
         @try {
             RootViewController* rootViewController = (RootViewController*)[navigationController.viewControllers objectAtIndex:0];
-            rootViewController.topApps = [[topAppsString JSONValue] objectForKey:@"events"];
+            
+            NSError *error;
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:topAppsData2 options:kNilOptions error:&error];
+            rootViewController.topApps = [json objectForKey:@"events"];
+            
+ //           rootViewController.topApps = [[topAppsString JSONValue] objectForKey:@"events"];
+
             [self.window addSubview:navigationController.view];
         }
         @catch (NSException * e) {
