@@ -100,7 +100,11 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
   self.nextPage = (page == (appData.count-1)) ? nil : [self createWebViewForIndex:page+1];
   
     if (WAZAAP_MODE) {
-        self.navigationItem.title = [[appData objectAtIndex:page] objectForKey:@"title"];
+        NSString *utf8String = [[appData objectAtIndex:page] objectForKey:@"title"];
+
+        NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+        self.navigationItem.title = correctString;
+ //       self.navigationItem.title = [[appData objectAtIndex:page] objectForKey:@"title"];
         if (page > 0)
             headerLabel.text = [[appData objectAtIndex:page-1] objectForKey:@"title"];
         if (page != appData.count-1)

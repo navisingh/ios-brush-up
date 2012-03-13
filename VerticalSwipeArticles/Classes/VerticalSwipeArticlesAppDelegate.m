@@ -157,12 +157,12 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    RootViewController* rootViewController = (RootViewController*)[navigationController.viewControllers objectAtIndex:0];
+
     if (WAZAAP_MODE) {
         NSString* topAppsString = [[[NSString alloc] initWithData:topAppsData2 encoding:NSUTF8StringEncoding] autorelease]; 
- //       self.topAppsData2 = nil;
-        
+         
         @try {
-            RootViewController* rootViewController = (RootViewController*)[navigationController.viewControllers objectAtIndex:0];
             
             NSError *error;
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:topAppsData2 options:kNilOptions error:&error];
@@ -174,6 +174,8 @@
         }
         @catch (NSException * e) {
         }
+        
+        self.topAppsData2 = nil;
     }
     else
     {
@@ -181,7 +183,6 @@
         self.topAppsData = nil;
         
         @try {
-            RootViewController* rootViewController = (RootViewController*)[navigationController.viewControllers objectAtIndex:0];
             rootViewController.topApps = [[[topAppsString JSONValue] objectForKey:@"feed"]objectForKey:@"entry"];
             [self.window addSubview:navigationController.view];
         }
