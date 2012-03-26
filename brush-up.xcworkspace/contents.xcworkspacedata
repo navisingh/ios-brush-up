@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:wazaapDemo/wazaapDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:../ios-tutorials/Mobile-Tuts-Plus-UIStoryboard/MobileTutsStoryboarding.xcodeproj">
    </FileRef>
    <FileRef

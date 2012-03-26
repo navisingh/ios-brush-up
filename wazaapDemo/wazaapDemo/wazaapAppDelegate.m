@@ -7,14 +7,49 @@
 //
 
 #import "wazaapAppDelegate.h"
+#import "wazaapEntity.h"
+#import "WazaapTableViewController.h"
 
 @implementation wazaapAppDelegate
 
 @synthesize window = _window;
 
+NSMutableArray *entities;
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    entities = [NSMutableArray arrayWithCapacity:10];
+    
+    {
+        WazaapEntity *we = [[WazaapEntity alloc] init];
+        we.name = @"Events";
+        we.detail = @"Whats happening around here?";
+        [entities addObject:we];
+    }
+    
+    {
+        WazaapEntity *we = [[WazaapEntity alloc] init];
+        we.name = @"Dining";
+        we.detail = @"What to eat around here?";
+        [entities addObject:we];
+    }
+    
+    {
+        WazaapEntity *we = [[WazaapEntity alloc] init];
+        we.name = @"Friends";
+        we.detail = @"Who do I know around here?";
+        [entities addObject:we];
+    }
+    
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+	UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:0];
+	WazaapTableViewController *wazaapVC= [[navigationController viewControllers] objectAtIndex:0];
+	wazaapVC.entities = entities;
+    
+    
     return YES;
 }
 							

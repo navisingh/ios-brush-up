@@ -14,12 +14,19 @@
 		5D0717921520203900324DDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717911520203900324DDB /* main.m */; };
 		5D0717961520203900324DDB /* wazaapAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717951520203900324DDB /* wazaapAppDelegate.m */; };
 		5D0717991520203900324DDB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717971520203900324DDB /* MainStoryboard.storyboard */; };
-		5D07179C1520203900324DDB /* wazaapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D07179B1520203900324DDB /* wazaapViewController.m */; };
 		5D0717A41520203900324DDB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0717A31520203900324DDB /* SenTestingKit.framework */; };
 		5D0717A51520203900324DDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0717851520203900324DDB /* UIKit.framework */; };
 		5D0717A61520203900324DDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0717871520203900324DDB /* Foundation.framework */; };
 		5D0717AE1520203900324DDB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717AC1520203900324DDB /* InfoPlist.strings */; };
 		5D0717B11520203900324DDB /* wazaapDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717B01520203900324DDB /* wazaapDemoTests.m */; };
+		5D0717C41520243C00324DDB /* WazaapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717C31520243C00324DDB /* WazaapTableViewController.m */; };
+		5D0717C71520255600324DDB /* WazaapEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717C61520255600324DDB /* WazaapEntity.m */; };
+		5D0717CA15202D8100324DDB /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717C915202D8100324DDB /* EventViewController.m */; };
+		5D0717CD15202DCC00324DDB /* VerticalSwipeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717CC15202DCC00324DDB /* VerticalSwipeScrollView.m */; };
+		5D0717D015202E2800324DDB /* PullArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717CE15202E2800324DDB /* PullArrow.png */; };
+		5D0717D115202E2800324DDB /* PullArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717CF15202E2800324DDB /* PullArrow@2x.png */; };
+		5D0717D315202E7100324DDB /* EventView.html in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717D215202E7100324DDB /* EventView.html */; };
+		5D0717D61520317800324DDB /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717D51520317800324DDB /* EventTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,14 +51,25 @@
 		5D0717941520203900324DDB /* wazaapAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wazaapAppDelegate.h; sourceTree = "<group>"; };
 		5D0717951520203900324DDB /* wazaapAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wazaapAppDelegate.m; sourceTree = "<group>"; };
 		5D0717981520203900324DDB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5D07179A1520203900324DDB /* wazaapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wazaapViewController.h; sourceTree = "<group>"; };
-		5D07179B1520203900324DDB /* wazaapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wazaapViewController.m; sourceTree = "<group>"; };
 		5D0717A21520203900324DDB /* wazaapDemoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wazaapDemoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0717A31520203900324DDB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		5D0717AB1520203900324DDB /* wazaapDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wazaapDemoTests-Info.plist"; sourceTree = "<group>"; };
 		5D0717AD1520203900324DDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5D0717AF1520203900324DDB /* wazaapDemoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wazaapDemoTests.h; sourceTree = "<group>"; };
 		5D0717B01520203900324DDB /* wazaapDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wazaapDemoTests.m; sourceTree = "<group>"; };
+		5D0717C21520243C00324DDB /* WazaapTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WazaapTableViewController.h; sourceTree = "<group>"; };
+		5D0717C31520243C00324DDB /* WazaapTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WazaapTableViewController.m; sourceTree = "<group>"; };
+		5D0717C51520255600324DDB /* WazaapEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WazaapEntity.h; sourceTree = "<group>"; };
+		5D0717C61520255600324DDB /* WazaapEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WazaapEntity.m; sourceTree = "<group>"; };
+		5D0717C815202D8100324DDB /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		5D0717C915202D8100324DDB /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		5D0717CB15202DCC00324DDB /* VerticalSwipeScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalSwipeScrollView.h; sourceTree = "<group>"; };
+		5D0717CC15202DCC00324DDB /* VerticalSwipeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalSwipeScrollView.m; sourceTree = "<group>"; };
+		5D0717CE15202E2800324DDB /* PullArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PullArrow.png; sourceTree = "<group>"; };
+		5D0717CF15202E2800324DDB /* PullArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PullArrow@2x.png"; sourceTree = "<group>"; };
+		5D0717D215202E7100324DDB /* EventView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = EventView.html; sourceTree = "<group>"; };
+		5D0717D41520317800324DDB /* EventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewController.h; sourceTree = "<group>"; };
+		5D0717D51520317800324DDB /* EventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +129,19 @@
 		5D07178B1520203900324DDB /* wazaapDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5D0717971520203900324DDB /* MainStoryboard.storyboard */,
 				5D0717941520203900324DDB /* wazaapAppDelegate.h */,
 				5D0717951520203900324DDB /* wazaapAppDelegate.m */,
-				5D0717971520203900324DDB /* MainStoryboard.storyboard */,
-				5D07179A1520203900324DDB /* wazaapViewController.h */,
-				5D07179B1520203900324DDB /* wazaapViewController.m */,
+				5D0717C21520243C00324DDB /* WazaapTableViewController.h */,
+				5D0717C31520243C00324DDB /* WazaapTableViewController.m */,
+				5D0717C51520255600324DDB /* WazaapEntity.h */,
+				5D0717C61520255600324DDB /* WazaapEntity.m */,
+				5D0717D41520317800324DDB /* EventTableViewController.h */,
+				5D0717D51520317800324DDB /* EventTableViewController.m */,
+				5D0717C815202D8100324DDB /* EventViewController.h */,
+				5D0717C915202D8100324DDB /* EventViewController.m */,
+				5D0717CB15202DCC00324DDB /* VerticalSwipeScrollView.h */,
+				5D0717CC15202DCC00324DDB /* VerticalSwipeScrollView.m */,
 				5D07178C1520203900324DDB /* Supporting Files */,
 			);
 			path = wazaapDemo;
@@ -124,6 +150,9 @@
 		5D07178C1520203900324DDB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5D0717D215202E7100324DDB /* EventView.html */,
+				5D0717CE15202E2800324DDB /* PullArrow.png */,
+				5D0717CF15202E2800324DDB /* PullArrow@2x.png */,
 				5D07178D1520203900324DDB /* wazaapDemo-Info.plist */,
 				5D07178E1520203900324DDB /* InfoPlist.strings */,
 				5D0717911520203900324DDB /* main.m */,
@@ -223,6 +252,9 @@
 			files = (
 				5D0717901520203900324DDB /* InfoPlist.strings in Resources */,
 				5D0717991520203900324DDB /* MainStoryboard.storyboard in Resources */,
+				5D0717D015202E2800324DDB /* PullArrow.png in Resources */,
+				5D0717D115202E2800324DDB /* PullArrow@2x.png in Resources */,
+				5D0717D315202E7100324DDB /* EventView.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +291,11 @@
 			files = (
 				5D0717921520203900324DDB /* main.m in Sources */,
 				5D0717961520203900324DDB /* wazaapAppDelegate.m in Sources */,
-				5D07179C1520203900324DDB /* wazaapViewController.m in Sources */,
+				5D0717C41520243C00324DDB /* WazaapTableViewController.m in Sources */,
+				5D0717C71520255600324DDB /* WazaapEntity.m in Sources */,
+				5D0717CA15202D8100324DDB /* EventViewController.m in Sources */,
+				5D0717CD15202DCC00324DDB /* VerticalSwipeScrollView.m in Sources */,
+				5D0717D61520317800324DDB /* EventTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +465,7 @@
 				5D0717B61520203900324DDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D0717B71520203900324DDB /* Build configuration list for PBXNativeTarget "wazaapDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +474,7 @@
 				5D0717B91520203900324DDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
