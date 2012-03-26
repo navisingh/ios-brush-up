@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D0717861520203900324DDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0717851520203900324DDB /* UIKit.framework */; };
+		5D0717881520203900324DDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0717871520203900324DDB /* Foundation.framework */; };
+		5D07178A1520203900324DDB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0717891520203900324DDB /* CoreGraphics.framework */; };
+		5D0717901520203900324DDB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D07178E1520203900324DDB /* InfoPlist.strings */; };
+		5D0717921520203900324DDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717911520203900324DDB /* main.m */; };
+		5D0717961520203900324DDB /* wazaapAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717951520203900324DDB /* wazaapAppDelegate.m */; };
+		5D0717991520203900324DDB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717971520203900324DDB /* MainStoryboard.storyboard */; };
+		5D07179C1520203900324DDB /* wazaapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D07179B1520203900324DDB /* wazaapViewController.m */; };
+		5D0717A41520203900324DDB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0717A31520203900324DDB /* SenTestingKit.framework */; };
+		5D0717A51520203900324DDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0717851520203900324DDB /* UIKit.framework */; };
+		5D0717A61520203900324DDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0717871520203900324DDB /* Foundation.framework */; };
+		5D0717AE1520203900324DDB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717AC1520203900324DDB /* InfoPlist.strings */; };
+		5D0717B11520203900324DDB /* wazaapDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717B01520203900324DDB /* wazaapDemoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D0717A71520203900324DDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D0717781520203900324DDB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D0717801520203900324DDB;
+			remoteInfo = wazaapDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5D0717811520203900324DDB /* wazaapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wazaapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0717851520203900324DDB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5D0717871520203900324DDB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5D0717891520203900324DDB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5D07178D1520203900324DDB /* wazaapDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wazaapDemo-Info.plist"; sourceTree = "<group>"; };
+		5D07178F1520203900324DDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5D0717911520203900324DDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5D0717931520203900324DDB /* wazaapDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wazaapDemo-Prefix.pch"; sourceTree = "<group>"; };
+		5D0717941520203900324DDB /* wazaapAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wazaapAppDelegate.h; sourceTree = "<group>"; };
+		5D0717951520203900324DDB /* wazaapAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wazaapAppDelegate.m; sourceTree = "<group>"; };
+		5D0717981520203900324DDB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5D07179A1520203900324DDB /* wazaapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wazaapViewController.h; sourceTree = "<group>"; };
+		5D07179B1520203900324DDB /* wazaapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wazaapViewController.m; sourceTree = "<group>"; };
+		5D0717A21520203900324DDB /* wazaapDemoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wazaapDemoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0717A31520203900324DDB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		5D0717AB1520203900324DDB /* wazaapDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wazaapDemoTests-Info.plist"; sourceTree = "<group>"; };
+		5D0717AD1520203900324DDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5D0717AF1520203900324DDB /* wazaapDemoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wazaapDemoTests.h; sourceTree = "<group>"; };
+		5D0717B01520203900324DDB /* wazaapDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wazaapDemoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D07177E1520203900324DDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0717861520203900324DDB /* UIKit.framework in Frameworks */,
+				5D0717881520203900324DDB /* Foundation.framework in Frameworks */,
+				5D07178A1520203900324DDB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D07179E1520203900324DDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0717A41520203900324DDB /* SenTestingKit.framework in Frameworks */,
+				5D0717A51520203900324DDB /* UIKit.framework in Frameworks */,
+				5D0717A61520203900324DDB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D0717761520203900324DDB = {
+			isa = PBXGroup;
+			children = (
+				5D07178B1520203900324DDB /* wazaapDemo */,
+				5D0717A91520203900324DDB /* wazaapDemoTests */,
+				5D0717841520203900324DDB /* Frameworks */,
+				5D0717821520203900324DDB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5D0717821520203900324DDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D0717811520203900324DDB /* wazaapDemo.app */,
+				5D0717A21520203900324DDB /* wazaapDemoTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D0717841520203900324DDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D0717851520203900324DDB /* UIKit.framework */,
+				5D0717871520203900324DDB /* Foundation.framework */,
+				5D0717891520203900324DDB /* CoreGraphics.framework */,
+				5D0717A31520203900324DDB /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D07178B1520203900324DDB /* wazaapDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5D0717941520203900324DDB /* wazaapAppDelegate.h */,
+				5D0717951520203900324DDB /* wazaapAppDelegate.m */,
+				5D0717971520203900324DDB /* MainStoryboard.storyboard */,
+				5D07179A1520203900324DDB /* wazaapViewController.h */,
+				5D07179B1520203900324DDB /* wazaapViewController.m */,
+				5D07178C1520203900324DDB /* Supporting Files */,
+			);
+			path = wazaapDemo;
+			sourceTree = "<group>";
+		};
+		5D07178C1520203900324DDB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D07178D1520203900324DDB /* wazaapDemo-Info.plist */,
+				5D07178E1520203900324DDB /* InfoPlist.strings */,
+				5D0717911520203900324DDB /* main.m */,
+				5D0717931520203900324DDB /* wazaapDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D0717A91520203900324DDB /* wazaapDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5D0717AF1520203900324DDB /* wazaapDemoTests.h */,
+				5D0717B01520203900324DDB /* wazaapDemoTests.m */,
+				5D0717AA1520203900324DDB /* Supporting Files */,
+			);
+			path = wazaapDemoTests;
+			sourceTree = "<group>";
+		};
+		5D0717AA1520203900324DDB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D0717AB1520203900324DDB /* wazaapDemoTests-Info.plist */,
+				5D0717AC1520203900324DDB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5D0717801520203900324DDB /* wazaapDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D0717B41520203900324DDB /* Build configuration list for PBXNativeTarget "wazaapDemo" */;
+			buildPhases = (
+				5D07177D1520203900324DDB /* Sources */,
+				5D07177E1520203900324DDB /* Frameworks */,
+				5D07177F1520203900324DDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wazaapDemo;
+			productName = wazaapDemo;
+			productReference = 5D0717811520203900324DDB /* wazaapDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5D0717A11520203900324DDB /* wazaapDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D0717B71520203900324DDB /* Build configuration list for PBXNativeTarget "wazaapDemoTests" */;
+			buildPhases = (
+				5D07179D1520203900324DDB /* Sources */,
+				5D07179E1520203900324DDB /* Frameworks */,
+				5D07179F1520203900324DDB /* Resources */,
+				5D0717A01520203900324DDB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D0717A81520203900324DDB /* PBXTargetDependency */,
+			);
+			name = wazaapDemoTests;
+			productName = wazaapDemoTests;
+			productReference = 5D0717A21520203900324DDB /* wazaapDemoTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5D0717781520203900324DDB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 5D07177B1520203900324DDB /* Build configuration list for PBXProject "wazaapDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5D0717761520203900324DDB;
+			productRefGroup = 5D0717821520203900324DDB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D0717801520203900324DDB /* wazaapDemo */,
+				5D0717A11520203900324DDB /* wazaapDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D07177F1520203900324DDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0717901520203900324DDB /* InfoPlist.strings in Resources */,
+				5D0717991520203900324DDB /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D07179F1520203900324DDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0717AE1520203900324DDB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D0717A01520203900324DDB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D07177D1520203900324DDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0717921520203900324DDB /* main.m in Sources */,
+				5D0717961520203900324DDB /* wazaapAppDelegate.m in Sources */,
+				5D07179C1520203900324DDB /* wazaapViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D07179D1520203900324DDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0717B11520203900324DDB /* wazaapDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D0717A81520203900324DDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D0717801520203900324DDB /* wazaapDemo */;
+			targetProxy = 5D0717A71520203900324DDB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5D07178E1520203900324DDB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D07178F1520203900324DDB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5D0717971520203900324DDB /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D0717981520203900324DDB /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		5D0717AC1520203900324DDB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D0717AD1520203900324DDB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5D0717B21520203900324DDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5D0717B31520203900324DDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D0717B51520203900324DDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wazaapDemo/wazaapDemo-Prefix.pch";
+				INFOPLIST_FILE = "wazaapDemo/wazaapDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5D0717B61520203900324DDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wazaapDemo/wazaapDemo-Prefix.pch";
+				INFOPLIST_FILE = "wazaapDemo/wazaapDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5D0717B81520203900324DDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/wazaapDemo.app/wazaapDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wazaapDemo/wazaapDemo-Prefix.pch";
+				INFOPLIST_FILE = "wazaapDemoTests/wazaapDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		5D0717B91520203900324DDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/wazaapDemo.app/wazaapDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wazaapDemo/wazaapDemo-Prefix.pch";
+				INFOPLIST_FILE = "wazaapDemoTests/wazaapDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5D07177B1520203900324DDB /* Build configuration list for PBXProject "wazaapDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D0717B21520203900324DDB /* Debug */,
+				5D0717B31520203900324DDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D0717B41520203900324DDB /* Build configuration list for PBXNativeTarget "wazaapDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D0717B51520203900324DDB /* Debug */,
+				5D0717B61520203900324DDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5D0717B71520203900324DDB /* Build configuration list for PBXNativeTarget "wazaapDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D0717B81520203900324DDB /* Debug */,
+				5D0717B91520203900324DDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5D0717781520203900324DDB /* Project object */;
+}
