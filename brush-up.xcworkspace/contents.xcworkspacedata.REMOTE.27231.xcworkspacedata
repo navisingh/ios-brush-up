@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:testFacebookConnect/testFacebookConnect.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../gdata-objectivec-client/Examples/SpreadsheetSample/SpreadsheetSample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:VerticalSwipeArticles/VerticalSwipeArticles.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Ratings/Ratings.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:StoryboardTutorial/StoryboardTutorial.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Stocks/Stocks.xcodeproj">
+   </FileRef>
+</Workspace>

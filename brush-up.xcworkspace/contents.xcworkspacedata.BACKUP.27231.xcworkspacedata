@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+<<<<<<< HEAD
+      location = "group:../3rdParty/gData-source/Examples/SpreadsheetSample/SpreadsheetSample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:idev-recipes/VerticalSwipeArticles/VerticalSwipeArticles.xcodeproj">
+=======
+      location = "group:testFacebookConnect/testFacebookConnect.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../gdata-objectivec-client/Examples/SpreadsheetSample/SpreadsheetSample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:VerticalSwipeArticles/VerticalSwipeArticles.xcodeproj">
+>>>>>>> ca7e5e6e114d2292277afd8bdc6dd5830b1f9242
+   </FileRef>
+   <FileRef
+      location = "group:Ratings/Ratings.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:StoryboardTutorial/StoryboardTutorial.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Stocks/Stocks.xcodeproj">
+   </FileRef>
+</Workspace>

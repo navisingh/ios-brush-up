@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:idev-recipes/VerticalSwipeArticles/VerticalSwipeArticles.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Ratings/Ratings.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:StoryboardTutorial/StoryboardTutorial.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Stocks/Stocks.xcodeproj">
+   </FileRef>
+</Workspace>
