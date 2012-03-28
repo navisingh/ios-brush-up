@@ -46,6 +46,7 @@ NSMutableArray *entities;
     
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
 	UINavigationController *navigationController = [[tabBarController viewControllers] objectAtIndex:0];
+    
 	WazaapTableViewController *wazaapVC= [[navigationController viewControllers] objectAtIndex:0];
 	wazaapVC.entities = entities;
     

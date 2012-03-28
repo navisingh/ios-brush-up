@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class WazaapEntity;
 @interface WazaapTableViewController : UITableViewController
-
+{
+}
+@property (nonatomic, strong) WazaapEntity *entity;
 @property (nonatomic, strong) NSMutableArray *entities;
+@property (nonatomic, strong) NSMutableData *connectionData;
 
 @end
 

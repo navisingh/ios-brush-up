@@ -1,16 +1,17 @@
 //
-//  EventTableViewController.h
+//  DiningTableViewController.h
 //  wazaapDemo
 //
-//  Created by Navi Singh on 3/25/12.
+//  Created by Navi Singh on 3/27/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "BaseTableViewController.h"
 
-@interface EventTableViewController : BaseTableViewController
+@interface DiningTableViewController : BaseTableViewController
 {
+    
 }
 
 @end

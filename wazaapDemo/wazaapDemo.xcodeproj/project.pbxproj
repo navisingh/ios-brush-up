@@ -21,12 +21,16 @@
 		5D0717B11520203900324DDB /* wazaapDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717B01520203900324DDB /* wazaapDemoTests.m */; };
 		5D0717C41520243C00324DDB /* WazaapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717C31520243C00324DDB /* WazaapTableViewController.m */; };
 		5D0717C71520255600324DDB /* WazaapEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717C61520255600324DDB /* WazaapEntity.m */; };
-		5D0717CA15202D8100324DDB /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717C915202D8100324DDB /* EventViewController.m */; };
+		5D0717CA15202D8100324DDB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717C915202D8100324DDB /* DetailViewController.m */; };
 		5D0717CD15202DCC00324DDB /* VerticalSwipeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717CC15202DCC00324DDB /* VerticalSwipeScrollView.m */; };
 		5D0717D015202E2800324DDB /* PullArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717CE15202E2800324DDB /* PullArrow.png */; };
 		5D0717D115202E2800324DDB /* PullArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717CF15202E2800324DDB /* PullArrow@2x.png */; };
 		5D0717D315202E7100324DDB /* EventView.html in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717D215202E7100324DDB /* EventView.html */; };
 		5D0717D61520317800324DDB /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717D51520317800324DDB /* EventTableViewController.m */; };
+		5D0718141522707C00324DDB /* DiningTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0718131522707B00324DDB /* DiningTableViewController.m */; };
+		5D071818152270AB00324DDB /* DiningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D071817152270AB00324DDB /* DiningViewController.m */; };
+		5D07181B1522726600324DDB /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D07181A1522726500324DDB /* Utility.m */; };
+		5D07181E152273BD00324DDB /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D07181D152273BC00324DDB /* BaseTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +65,8 @@
 		5D0717C31520243C00324DDB /* WazaapTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WazaapTableViewController.m; sourceTree = "<group>"; };
 		5D0717C51520255600324DDB /* WazaapEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WazaapEntity.h; sourceTree = "<group>"; };
 		5D0717C61520255600324DDB /* WazaapEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WazaapEntity.m; sourceTree = "<group>"; };
-		5D0717C815202D8100324DDB /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
-		5D0717C915202D8100324DDB /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		5D0717C815202D8100324DDB /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DetailViewController.h; sourceTree = "<group>"; };
+		5D0717C915202D8100324DDB /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5D0717CB15202DCC00324DDB /* VerticalSwipeScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalSwipeScrollView.h; sourceTree = "<group>"; };
 		5D0717CC15202DCC00324DDB /* VerticalSwipeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalSwipeScrollView.m; sourceTree = "<group>"; };
 		5D0717CE15202E2800324DDB /* PullArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PullArrow.png; sourceTree = "<group>"; };
@@ -70,6 +74,14 @@
 		5D0717D215202E7100324DDB /* EventView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = EventView.html; sourceTree = "<group>"; };
 		5D0717D41520317800324DDB /* EventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewController.h; sourceTree = "<group>"; };
 		5D0717D51520317800324DDB /* EventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewController.m; sourceTree = "<group>"; };
+		5D0718121522707B00324DDB /* DiningTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningTableViewController.h; sourceTree = "<group>"; };
+		5D0718131522707B00324DDB /* DiningTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningTableViewController.m; sourceTree = "<group>"; };
+		5D071816152270AB00324DDB /* DiningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningViewController.h; sourceTree = "<group>"; };
+		5D071817152270AB00324DDB /* DiningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningViewController.m; sourceTree = "<group>"; };
+		5D0718191522726500324DDB /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		5D07181A1522726500324DDB /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		5D07181C152273BC00324DDB /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		5D07181D152273BC00324DDB /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,13 +148,21 @@
 				5D0717C31520243C00324DDB /* WazaapTableViewController.m */,
 				5D0717C51520255600324DDB /* WazaapEntity.h */,
 				5D0717C61520255600324DDB /* WazaapEntity.m */,
+				5D07181C152273BC00324DDB /* BaseTableViewController.h */,
+				5D07181D152273BC00324DDB /* BaseTableViewController.m */,
 				5D0717D41520317800324DDB /* EventTableViewController.h */,
 				5D0717D51520317800324DDB /* EventTableViewController.m */,
-				5D0717C815202D8100324DDB /* EventViewController.h */,
-				5D0717C915202D8100324DDB /* EventViewController.m */,
+				5D0718121522707B00324DDB /* DiningTableViewController.h */,
+				5D0718131522707B00324DDB /* DiningTableViewController.m */,
+				5D0717C815202D8100324DDB /* DetailViewController.h */,
+				5D0717C915202D8100324DDB /* DetailViewController.m */,
+				5D071816152270AB00324DDB /* DiningViewController.h */,
+				5D071817152270AB00324DDB /* DiningViewController.m */,
 				5D0717CB15202DCC00324DDB /* VerticalSwipeScrollView.h */,
 				5D0717CC15202DCC00324DDB /* VerticalSwipeScrollView.m */,
 				5D07178C1520203900324DDB /* Supporting Files */,
+				5D0718191522726500324DDB /* Utility.h */,
+				5D07181A1522726500324DDB /* Utility.m */,
 			);
 			path = wazaapDemo;
 			sourceTree = "<group>";
@@ -293,9 +313,13 @@
 				5D0717961520203900324DDB /* wazaapAppDelegate.m in Sources */,
 				5D0717C41520243C00324DDB /* WazaapTableViewController.m in Sources */,
 				5D0717C71520255600324DDB /* WazaapEntity.m in Sources */,
-				5D0717CA15202D8100324DDB /* EventViewController.m in Sources */,
+				5D0717CA15202D8100324DDB /* DetailViewController.m in Sources */,
 				5D0717CD15202DCC00324DDB /* VerticalSwipeScrollView.m in Sources */,
 				5D0717D61520317800324DDB /* EventTableViewController.m in Sources */,
+				5D0718141522707C00324DDB /* DiningTableViewController.m in Sources */,
+				5D071818152270AB00324DDB /* DiningViewController.m in Sources */,
+				5D07181B1522726600324DDB /* Utility.m in Sources */,
+				5D07181E152273BD00324DDB /* BaseTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
