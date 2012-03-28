@@ -13,6 +13,7 @@
 
 @implementation EventTableViewController
 
+@synthesize tableView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -111,11 +112,21 @@
     
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EventCell"];
     NSDictionary *entity = [self.entities objectAtIndex:indexPath.row];
+ 
     NSString *rawTitle = [entity objectForKey:@"title"]; 
+    NSString *title = [NSString stringWithCString:[rawTitle cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+	cell.textLabel.text = title;
+    
     NSString *rawSubTitle = [entity objectForKey:@"description"];
-    NSString *humanTitle = [NSString stringWithUTF8String:[rawTitle cStringUsingEncoding:[NSString defaultCStringEncoding]]];
-	cell.textLabel.text = humanTitle;
-	cell.detailTextLabel.text = rawSubTitle;
+    @try {
+        NSString *subtitle = [NSString stringWithCString:[rawSubTitle cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+        cell.detailTextLabel.text = subtitle;
+    }
+    @catch (NSException *exception) {
+        cell.detailTextLabel.text = @"";
+    }
+    @finally {
+    }
     
     // Configure the cell...
     
@@ -174,12 +185,33 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     
-    DetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"details"];
-    vc.appData = self.entities;
-    vc.startIndex = indexPath.row;
-    [self.navigationController pushViewController:vc animated:YES];
+//    DetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"details"];
+//    vc.appData = self.entities;
+//    vc.startIndex = indexPath.row;
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"ShowDetails"])
+	{
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        DetailViewController *vc;
+        
+        if (0) {
+            vc = segue.destinationViewController;
+        }
+        else
+        {
+            UINavigationController *navigationController = segue.destinationViewController;
+            vc = [[navigationController viewControllers] objectAtIndex:0];           
+        }
+        
+        vc.appData = self.entities;
+        vc.startIndex = indexPath.row;
+	}
+}
 
 
 @end

@@ -12,6 +12,7 @@
 @interface DetailViewController (PrivateMethods)
 -(void)hideGradientBackground:(UIView*)theView;
 -(UIWebView*) createWebViewForIndex:(NSUInteger)index;
+-(void)willAppearIn:(UINavigationController *)navigationController;
 @end
 
 @implementation DetailViewController
@@ -24,6 +25,7 @@
 - (void)viewDidLoad
 {
     headerImageView.transform = CGAffineTransformMakeRotation(DegreesToRadians(180));
+    [self willAppearIn:nil];
 }
 
 -(void)willAppearIn:(UINavigationController *)navigationController

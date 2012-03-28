@@ -50,11 +50,11 @@
   UIView* currentPageView;
 }
 
-@property (nonatomic, copy) id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate> externalDelegate;
-@property (nonatomic, copy) IBOutlet UIView* headerView;
+@property (nonatomic, strong) id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate> externalDelegate;
+@property (nonatomic, strong) IBOutlet UIView* headerView;
 @property (nonatomic, copy) IBOutlet UIView* footerView;
 @property (nonatomic) NSUInteger currentPageIndex;
-@property (nonatomic, copy) UIView* currentPageView;
+@property (nonatomic, strong) UIView* currentPageView;
 
 - (id) initWithFrame:(CGRect)frame headerView:(UIView*)headerView footerView:(UIView*)footerView startingAt:(NSUInteger)pageIndex delegate:(id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate>)verticalSwipeDelegate;
 

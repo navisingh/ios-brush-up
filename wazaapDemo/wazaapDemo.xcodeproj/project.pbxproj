@@ -25,7 +25,7 @@
 		5D0717CD15202DCC00324DDB /* VerticalSwipeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717CC15202DCC00324DDB /* VerticalSwipeScrollView.m */; };
 		5D0717D015202E2800324DDB /* PullArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717CE15202E2800324DDB /* PullArrow.png */; };
 		5D0717D115202E2800324DDB /* PullArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717CF15202E2800324DDB /* PullArrow@2x.png */; };
-		5D0717D315202E7100324DDB /* EventView.html in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717D215202E7100324DDB /* EventView.html */; };
+		5D0717D315202E7100324DDB /* DetailView.html in Resources */ = {isa = PBXBuildFile; fileRef = 5D0717D215202E7100324DDB /* DetailView.html */; };
 		5D0717D61520317800324DDB /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0717D51520317800324DDB /* EventTableViewController.m */; };
 		5D0718141522707C00324DDB /* DiningTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0718131522707B00324DDB /* DiningTableViewController.m */; };
 		5D071818152270AB00324DDB /* DiningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D071817152270AB00324DDB /* DiningViewController.m */; };
@@ -71,7 +71,7 @@
 		5D0717CC15202DCC00324DDB /* VerticalSwipeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalSwipeScrollView.m; sourceTree = "<group>"; };
 		5D0717CE15202E2800324DDB /* PullArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PullArrow.png; sourceTree = "<group>"; };
 		5D0717CF15202E2800324DDB /* PullArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PullArrow@2x.png"; sourceTree = "<group>"; };
-		5D0717D215202E7100324DDB /* EventView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = EventView.html; sourceTree = "<group>"; };
+		5D0717D215202E7100324DDB /* DetailView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DetailView.html; sourceTree = "<group>"; };
 		5D0717D41520317800324DDB /* EventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewController.h; sourceTree = "<group>"; };
 		5D0717D51520317800324DDB /* EventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewController.m; sourceTree = "<group>"; };
 		5D0718121522707B00324DDB /* DiningTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningTableViewController.h; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		5D07178C1520203900324DDB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5D0717D215202E7100324DDB /* EventView.html */,
+				5D0717D215202E7100324DDB /* DetailView.html */,
 				5D0717CE15202E2800324DDB /* PullArrow.png */,
 				5D0717CF15202E2800324DDB /* PullArrow@2x.png */,
 				5D07178D1520203900324DDB /* wazaapDemo-Info.plist */,
@@ -274,7 +274,7 @@
 				5D0717991520203900324DDB /* MainStoryboard.storyboard in Resources */,
 				5D0717D015202E2800324DDB /* PullArrow.png in Resources */,
 				5D0717D115202E2800324DDB /* PullArrow@2x.png in Resources */,
-				5D0717D315202E7100324DDB /* EventView.html in Resources */,
+				5D0717D315202E7100324DDB /* DetailView.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" id="8Sx-M9-CtI"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1214" y="-75"/>
+            <point key="canvasLocation" x="692" y="941"/>
         </scene>
         <scene sceneID="joa-HJ-jvV">
             <objects>
@@ -83,6 +83,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="xD5-wK-5AI" kind="modal" identifier="ShowDetails" id="3Fe-eo-98K"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -91,9 +94,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Z7J-ph-BbS"/>
+                    <connections>
+                        <outlet property="tableView" destination="ACd-GX-vmn" id="ROf-fk-Dsu"/>
+                    </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2214" y="-409"/>
+            <point key="canvasLocation" x="1552" y="315"/>
         </scene>
         <scene sceneID="QJk-cT-gSR">
             <objects>
@@ -138,7 +144,7 @@
                     <navigationItem key="navigationItem" id="cpm-Qy-9aN"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2222" y="245"/>
+            <point key="canvasLocation" x="1564" y="1005"/>
         </scene>
         <scene sceneID="odr-pM-NhS">
             <objects>
@@ -152,20 +158,78 @@
                     <tabBarItem key="tabBarItem" title="Settings" id="pBe-nw-vgg"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="688" y="495"/>
+            <point key="canvasLocation" x="692" y="213"/>
         </scene>
         <scene sceneID="aeJ-Jg-xJz">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7q-8V-xk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="details" id="zeH-41-ojF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rz5-EU-JgF">
+                <viewController storyboardIdentifier="details" id="zeH-41-ojF" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="rz5-EU-JgF">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="uf7-30-5qE" userLabel="Header View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="PullArrow.png" id="dSK-oP-ZXr">
+                                        <rect key="frame" x="13" y="4" width="21" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="Lfg-qE-QYf">
+                                        <rect key="frame" x="59" y="14" width="241" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="Lse-XL-Qfw" userLabel="Footer View">
+                                <rect key="frame" x="0.0" y="405" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="PullArrow.png" id="gRb-Ak-oBt">
+                                        <rect key="frame" x="13" y="4" width="21" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="V2P-Fc-qza">
+                                        <rect key="frame" x="59" y="14" width="241" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Hello" lineBreakMode="tailTruncation" minimumFontSize="10" id="WTz-K6-RxH">
+                                <rect key="frame" x="139" y="219" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="SpG-80-7gq"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="footerImageView" destination="gRb-Ak-oBt" id="Xqf-Ms-G93"/>
+                        <outlet property="footerLabel" destination="V2P-Fc-qza" id="5Ob-IY-D2C"/>
+                        <outlet property="footerView" destination="Lse-XL-Qfw" id="OH9-s1-feW"/>
+                        <outlet property="headerImageView" destination="dSK-oP-ZXr" id="LE8-7q-19F"/>
+                        <outlet property="headerLabel" destination="Lfg-qE-QYf" id="gZV-cG-VZi"/>
+                        <outlet property="headerView" destination="uf7-30-5qE" id="Jiw-uq-27r"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1216" y="683"/>
+            <point key="canvasLocation" x="2598" y="315"/>
         </scene>
         <scene sceneID="zek-zL-V9E">
             <objects>
@@ -201,7 +265,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="688" y="-75"/>
+            <point key="canvasLocation" x="268" y="941"/>
         </scene>
         <scene sceneID="wsZ-hD-aUT">
             <objects>
@@ -219,7 +283,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1730" y="-409"/>
+            <point key="canvasLocation" x="1134" y="315"/>
         </scene>
         <scene sceneID="Q25-8W-nir">
             <objects>
@@ -237,15 +301,49 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1730" y="245"/>
+            <point key="canvasLocation" x="1134" y="1005"/>
+        </scene>
+        <scene sceneID="27l-tC-g5D">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OgK-DT-FQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="xD5-wK-5AI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6dV-Xc-JAG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zeH-41-ojF" kind="relationship" relationship="rootViewController" id="QpB-yD-vZ1"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2072" y="315"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PullArrow.png" width="21" height="39"/>
+    </resources>
     <classes>
         <class className="BaseTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseTableViewController.h"/>
         </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="footerImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="footerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="footerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="headerImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="headerView" candidateClass="UIView"/>
+            </relationships>
+        </class>
         <class className="EventTableViewController" superclassName="BaseTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EventTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="WazaapTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WazaapTableViewController.h"/>
