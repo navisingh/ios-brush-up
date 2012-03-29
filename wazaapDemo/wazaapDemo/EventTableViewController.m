@@ -94,7 +94,7 @@
     return count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /*
     static NSString *CellIdentifier = @"Cell";
@@ -110,12 +110,19 @@
     */
     
     
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EventCell"];
+	UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:@"EventCell"];
     NSDictionary *entity = [self.entities objectAtIndex:indexPath.row];
  
     NSString *rawTitle = [entity objectForKey:@"title"]; 
-    NSString *title = [NSString stringWithCString:[rawTitle cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
-	cell.textLabel.text = title;
+    @try {
+        NSString *title = [NSString stringWithCString:[rawTitle cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+        cell.textLabel.text = title;
+    }
+    @catch (NSException *exception) {
+        cell.textLabel.text = rawTitle;
+    }
+    @finally {
+    }
     
     NSString *rawSubTitle = [entity objectForKey:@"description"];
     @try {
@@ -197,7 +204,8 @@
 	{
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        DetailViewController *vc;
+        UIViewController *vc = segue.destinationViewController;
+        DetailViewController *dvc;
         
         if (0) {
             vc = segue.destinationViewController;
@@ -205,11 +213,11 @@
         else
         {
             UINavigationController *navigationController = segue.destinationViewController;
-            vc = [[navigationController viewControllers] objectAtIndex:0];           
+            dvc = [[navigationController viewControllers] objectAtIndex:0];           
         }
         
-        vc.appData = self.entities;
-        vc.startIndex = indexPath.row;
+        dvc.appData = self.entities;
+        dvc.startIndex = indexPath.row;
 	}
 }
 

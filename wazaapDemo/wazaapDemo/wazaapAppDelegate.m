@@ -16,10 +16,16 @@
 
 NSMutableArray *entities;
 
+void onUncaughtException(NSException *exception)
+{
+    NSLog(@"uncaught exception at: %@", exception.description);
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+	NSSetUncaughtExceptionHandler(&onUncaughtException);
     
     entities = [NSMutableArray arrayWithCapacity:10];
     
@@ -32,8 +38,8 @@ NSMutableArray *entities;
     
     {
         WazaapEntity *we = [[WazaapEntity alloc] init];
-        we.name = @"Dining";
-        we.detail = @"What to eat around here?";
+        we.name = @"Venue";
+        we.detail = @"Where do I go around here?";
         [entities addObject:we];
     }
     

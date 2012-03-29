@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="9Cg-VT-2tu">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="9Cg-VT-2tu">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -59,11 +59,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" textLabel="izR-5Y-6BA" detailTextLabel="pja-vB-2Rr" style="IBUITableViewCellStyleSubtitle" id="mA1-dj-NNc">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" textLabel="izR-5Y-6BA" detailTextLabel="pja-vB-2Rr" style="IBUITableViewCellStyleSubtitle" id="mA1-dj-NNc">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="izR-5Y-6BA">
@@ -84,7 +84,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="xD5-wK-5AI" kind="modal" identifier="ShowDetails" id="3Fe-eo-98K"/>
+                                    <segue destination="nz5-JI-pdl" kind="modal" identifier="ShowDetails" modalTransitionStyle="flipHorizontal" id="OlA-f6-F5P"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -163,7 +163,7 @@
         <scene sceneID="aeJ-Jg-xJz">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7q-8V-xk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="details" id="zeH-41-ojF" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="details" wantsFullScreenLayout="YES" id="zeH-41-ojF" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="rz5-EU-JgF">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -229,7 +229,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2598" y="315"/>
+            <point key="canvasLocation" x="2987" y="320"/>
         </scene>
         <scene sceneID="zek-zL-V9E">
             <objects>
@@ -303,22 +303,23 @@
             </objects>
             <point key="canvasLocation" x="1134" y="1005"/>
         </scene>
-        <scene sceneID="27l-tC-g5D">
+        <scene sceneID="OdN-wJ-CBw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OgK-DT-FQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="xD5-wK-5AI" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2W-MP-RJn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="nz5-JI-pdl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6dV-Xc-JAG">
+                    <navigationItem key="navigationItem" id="UZA-A7-O2c"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="uwc-zo-3qz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zeH-41-ojF" kind="relationship" relationship="rootViewController" id="QpB-yD-vZ1"/>
+                        <segue destination="zeH-41-ojF" kind="relationship" relationship="rootViewController" id="OEZ-VR-edS"/>
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="2072" y="315"/>
+            <point key="canvasLocation" x="1927" y="320"/>
         </scene>
     </scenes>
     <resources>

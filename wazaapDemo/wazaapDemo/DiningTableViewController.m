@@ -92,7 +92,7 @@
     return [self.entities count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /*
     static NSString *CellIdentifier = @"Cell";
@@ -107,7 +107,7 @@
     return cell;
      */
     
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DiningCell"];
+	UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:@"DiningCell"];
     NSDictionary *entity = [self.entities objectAtIndex:indexPath.row];
     NSString *rawTitle = [entity objectForKey:@"title"]; 
     NSString *rawSubTitle = [entity objectForKey:@"description"];
