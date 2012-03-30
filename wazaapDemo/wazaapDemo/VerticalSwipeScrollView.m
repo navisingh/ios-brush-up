@@ -357,6 +357,7 @@
 
 - (void)dealloc
 {
+    int x=0;
 }
 
 
