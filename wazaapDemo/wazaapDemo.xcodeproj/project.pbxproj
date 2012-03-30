@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183909F71525293200A62E86 /* PullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183909F61525293100A62E86 /* PullToRefreshView.m */; };
+		183909FA15252A2400A62E86 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183909F915252A2300A62E86 /* QuartzCore.framework */; };
 		5D0717861520203900324DDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0717851520203900324DDB /* UIKit.framework */; };
 		5D0717881520203900324DDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0717871520203900324DDB /* Foundation.framework */; };
 		5D07178A1520203900324DDB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0717891520203900324DDB /* CoreGraphics.framework */; };
@@ -44,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		183909F51525293100A62E86 /* PullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshView.h; sourceTree = "<group>"; };
+		183909F61525293100A62E86 /* PullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshView.m; sourceTree = "<group>"; };
+		183909F915252A2300A62E86 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5D0717811520203900324DDB /* wazaapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wazaapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0717851520203900324DDB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D0717871520203900324DDB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,7 +70,7 @@
 		5D0717C31520243C00324DDB /* WazaapTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WazaapTableViewController.m; sourceTree = "<group>"; };
 		5D0717C51520255600324DDB /* WazaapEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WazaapEntity.h; sourceTree = "<group>"; };
 		5D0717C61520255600324DDB /* WazaapEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WazaapEntity.m; sourceTree = "<group>"; };
-		5D0717C815202D8100324DDB /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DetailViewController.h; sourceTree = "<group>"; };
+		5D0717C815202D8100324DDB /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		5D0717C915202D8100324DDB /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5D0717CB15202DCC00324DDB /* VerticalSwipeScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalSwipeScrollView.h; sourceTree = "<group>"; };
 		5D0717CC15202DCC00324DDB /* VerticalSwipeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalSwipeScrollView.m; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183909FA15252A2400A62E86 /* QuartzCore.framework in Frameworks */,
 				5D0717861520203900324DDB /* UIKit.framework in Frameworks */,
 				5D0717881520203900324DDB /* Foundation.framework in Frameworks */,
 				5D07178A1520203900324DDB /* CoreGraphics.framework in Frameworks */,
@@ -111,6 +117,7 @@
 		5D0717761520203900324DDB = {
 			isa = PBXGroup;
 			children = (
+				183909F915252A2300A62E86 /* QuartzCore.framework */,
 				5D07178B1520203900324DDB /* wazaapDemo */,
 				5D0717A91520203900324DDB /* wazaapDemoTests */,
 				5D0717841520203900324DDB /* Frameworks */,
@@ -163,6 +170,8 @@
 				5D07178C1520203900324DDB /* Supporting Files */,
 				5D0718191522726500324DDB /* Utility.h */,
 				5D07181A1522726500324DDB /* Utility.m */,
+				183909F51525293100A62E86 /* PullToRefreshView.h */,
+				183909F61525293100A62E86 /* PullToRefreshView.m */,
 			);
 			path = wazaapDemo;
 			sourceTree = "<group>";
@@ -320,6 +329,7 @@
 				5D071818152270AB00324DDB /* DiningViewController.m in Sources */,
 				5D07181B1522726600324DDB /* Utility.m in Sources */,
 				5D07181E152273BD00324DDB /* BaseTableViewController.m in Sources */,
+				183909F71525293200A62E86 /* PullToRefreshView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

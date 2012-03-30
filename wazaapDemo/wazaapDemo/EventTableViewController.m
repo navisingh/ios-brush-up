@@ -115,8 +115,8 @@
  
     NSString *rawTitle = [entity objectForKey:@"title"]; 
     @try {
-        NSString *title = [NSString stringWithCString:[rawTitle cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
-        cell.textLabel.text = title;
+//        NSString *title = [NSString stringWithCString:[rawTitle cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+        cell.textLabel.text = rawTitle;
     }
     @catch (NSException *exception) {
         cell.textLabel.text = rawTitle;
@@ -126,8 +126,8 @@
     
     NSString *rawSubTitle = [entity objectForKey:@"description"];
     @try {
-        NSString *subtitle = [NSString stringWithCString:[rawSubTitle cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
-        cell.detailTextLabel.text = subtitle;
+//        NSString *subtitle = [NSString stringWithCString:[rawSubTitle cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+        cell.detailTextLabel.text = rawSubTitle;
     }
     @catch (NSException *exception) {
         cell.detailTextLabel.text = @"";
@@ -204,20 +204,14 @@
 	{
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        UIViewController *vc = segue.destinationViewController;
-        DetailViewController *dvc;
-        
-        if (0) {
-            vc = segue.destinationViewController;
-        }
-        else
-        {
-            UINavigationController *navigationController = segue.destinationViewController;
-            dvc = [[navigationController viewControllers] objectAtIndex:0];           
-        }
-        
+        UINavigationController *navigationController = segue.destinationViewController;
+        DetailViewController *dvc = [[navigationController viewControllers] objectAtIndex:0];           
+         
         dvc.appData = self.entities;
         dvc.startIndex = indexPath.row;
+        
+//        if ([dvc respondsToSelector:@selector(willAppearIn:)])
+//            [dvc performSelector:@selector(willAppearIn:) withObject:navigationController];
 	}
 }
 

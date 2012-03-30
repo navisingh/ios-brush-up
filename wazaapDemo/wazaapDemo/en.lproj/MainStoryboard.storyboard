@@ -169,7 +169,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="uf7-30-5qE" userLabel="Header View">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="93" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="PullArrow.png" id="dSK-oP-ZXr">
@@ -187,7 +187,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="Lse-XL-Qfw" userLabel="Footer View">
-                                <rect key="frame" x="0.0" y="405" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="266" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="PullArrow.png" id="gRb-Ak-oBt">
@@ -222,10 +222,10 @@
                     <connections>
                         <outlet property="footerImageView" destination="gRb-Ak-oBt" id="Xqf-Ms-G93"/>
                         <outlet property="footerLabel" destination="V2P-Fc-qza" id="5Ob-IY-D2C"/>
-                        <outlet property="footerView" destination="Lse-XL-Qfw" id="OH9-s1-feW"/>
+                        <outlet property="footerView" destination="Lse-XL-Qfw" id="NCf-5k-OO9"/>
                         <outlet property="headerImageView" destination="dSK-oP-ZXr" id="LE8-7q-19F"/>
                         <outlet property="headerLabel" destination="Lfg-qE-QYf" id="gZV-cG-VZi"/>
-                        <outlet property="headerView" destination="uf7-30-5qE" id="Jiw-uq-27r"/>
+                        <outlet property="headerView" destination="uf7-30-5qE" id="YQ0-lb-v0W"/>
                     </connections>
                 </viewController>
             </objects>

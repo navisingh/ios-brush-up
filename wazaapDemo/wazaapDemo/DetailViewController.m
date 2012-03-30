@@ -30,7 +30,14 @@
 
 -(void)willAppearIn:(UINavigationController *)navigationController
 {
-    self.verticalSwipeScrollView = [[VerticalSwipeScrollView alloc] initWithFrame:self.view.frame headerView:headerView footerView:footerView startingAt:startIndex delegate:self] ;
+    CGRect frame;
+    frame.origin.x = 0;
+    frame.origin.y = 0;
+    frame.size.width = 320;
+    frame.size.height = 416;
+
+    self.verticalSwipeScrollView = [[VerticalSwipeScrollView alloc] initWithFrame:frame headerView:headerView footerView:footerView startingAt:startIndex delegate:self] ;
+//    self.verticalSwipeScrollView = [[VerticalSwipeScrollView alloc] initWithFrame:self.view.frame headerView:headerView footerView:footerView startingAt:startIndex delegate:self] ;
     [self.view addSubview:verticalSwipeScrollView];
 }
 

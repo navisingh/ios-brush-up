@@ -86,40 +86,30 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
 
 -(UIView*) viewForScrollView:(VerticalSwipeScrollView*)scrollView atPage:(NSUInteger)page
 {
-  UIWebView* webView = nil;
-  
-  if (page < scrollView.currentPageIndex)
-    webView = [[previousPage retain] autorelease];
-  else if (page > scrollView.currentPageIndex)
-    webView = [[nextPage retain] autorelease];
-  
-  if (!webView)
-    webView = [self createWebViewForIndex:page];
-  
-  self.previousPage = page > 0 ? [self createWebViewForIndex:page-1] : nil;
-  self.nextPage = (page == (appData.count-1)) ? nil : [self createWebViewForIndex:page+1];
-  
-    if (WAZAAP_MODE) {
-        NSString *utf8String = [[appData objectAtIndex:page] objectForKey:@"title"];
-
-        NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
-        self.navigationItem.title = correctString;
- //       self.navigationItem.title = [[appData objectAtIndex:page] objectForKey:@"title"];
-        if (page > 0)
-            headerLabel.text = [[appData objectAtIndex:page-1] objectForKey:@"title"];
-        if (page != appData.count-1)
-            footerLabel.text = [[appData objectAtIndex:page+1] objectForKey:@"title"] ;
-    }
-    else
-    {
-        self.navigationItem.title = [[[appData objectAtIndex:page] objectForKey:@"im:name"] objectForKey:@"label"];
-        if (page > 0)
-            headerLabel.text = [[[appData objectAtIndex:page-1] objectForKey:@"im:name"] objectForKey:@"label"];
-        if (page != appData.count-1)
-            footerLabel.text = [[[appData objectAtIndex:page+1] objectForKey:@"im:name"] objectForKey:@"label"];
-    }
-
-  return webView;
+    UIWebView* webView = nil;
+    
+    if (page < scrollView.currentPageIndex)
+        webView = [[previousPage retain] autorelease];
+    else if (page > scrollView.currentPageIndex)
+        webView = [[nextPage retain] autorelease];
+    
+    if (!webView)
+        webView = [self createWebViewForIndex:page];
+    
+    self.previousPage = page > 0 ? [self createWebViewForIndex:page-1] : nil;
+    self.nextPage = (page == (appData.count-1)) ? nil : [self createWebViewForIndex:page+1];
+    
+    NSString *utf8String = [[appData objectAtIndex:page] objectForKey:@"title"];
+    
+    NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+    self.navigationItem.title = correctString;
+    //       self.navigationItem.title = [[appData objectAtIndex:page] objectForKey:@"title"];
+    if (page > 0)
+        headerLabel.text = [[appData objectAtIndex:page-1] objectForKey:@"title"];
+    if (page != appData.count-1)
+        footerLabel.text = [[appData objectAtIndex:page+1] objectForKey:@"title"] ;
+    
+    return webView;
 }
 
 -(NSUInteger) pageCount
@@ -129,37 +119,28 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
 
 -(UIWebView*) createWebViewForIndex:(NSUInteger)index
 {
-  UIWebView* webView = [[[UIWebView alloc] initWithFrame:self.view.frame] autorelease];
-  webView.opaque = NO;
-  [webView setBackgroundColor:[UIColor clearColor]];
-  [self hideGradientBackground:webView];
-
+    UIWebView* webView = [[[UIWebView alloc] initWithFrame:self.view.frame] autorelease];
+    webView.opaque = NO;
+    [webView setBackgroundColor:[UIColor clearColor]];
+    [self hideGradientBackground:webView];
+    
     NSString* htmlFile = [[[NSBundle mainBundle] bundlePath] stringByAppendingString:@"/DetailView.html"];
-
+    
     NSString* htmlString;
     
-    if (WAZAAP_MODE) {
-        htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- title -->" withString:[[appData objectAtIndex:index] objectForKey:@"title"]];
-        @try {
-            htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- icon -->" withString:[[appData objectAtIndex:index] objectForKey:@"image"]];
-        }
-        @catch (NSException *exception) {
-         }
-        @finally {
-        }
-        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- content -->" withString:[[appData objectAtIndex:index] objectForKey:@"description"] ];
+    htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
+    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- title -->" withString:[[appData objectAtIndex:index] objectForKey:@"title"]];
+    @try {
+        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- icon -->" withString:[[appData objectAtIndex:index] objectForKey:@"image"]];
     }
-    else
-    {
-        htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- title -->" withString:[[[appData objectAtIndex:index] objectForKey:@"im:name"] objectForKey:@"label"]];
-        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- icon -->" withString:[[[[appData objectAtIndex:index] objectForKey:@"im:image"] objectAtIndex:0] objectForKey:@"label"]];
-        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- content -->" withString:[[[appData objectAtIndex:index] objectForKey:@"summary"] objectForKey:@"label"]];
+    @catch (NSException *exception) {
     }
-  [webView loadHTMLString:htmlString baseURL:nil];
-  
-  return webView;
+    @finally {
+    }
+    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- content -->" withString:[[appData objectAtIndex:index] objectForKey:@"description"] ];
+    [webView loadHTMLString:htmlString baseURL:nil];
+    
+    return webView;
 }
 
 - (void) hideGradientBackground:(UIView*)theView

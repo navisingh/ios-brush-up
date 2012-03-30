@@ -38,7 +38,7 @@
 
 @interface VerticalSwipeScrollView : UIScrollView <UIScrollViewDelegate>
 {
-  id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate> externalDelegate;
+  __weak id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate> externalDelegate;
 
   IBOutlet UIView* headerView;
   IBOutlet UIView* footerView;
@@ -50,9 +50,9 @@
   UIView* currentPageView;
 }
 
-@property (nonatomic, strong) id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate> externalDelegate;
+@property (nonatomic, weak) id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate> externalDelegate;
 @property (nonatomic, strong) IBOutlet UIView* headerView;
-@property (nonatomic, copy) IBOutlet UIView* footerView;
+@property (nonatomic, strong) IBOutlet UIView* footerView;
 @property (nonatomic) NSUInteger currentPageIndex;
 @property (nonatomic, strong) UIView* currentPageView;
 
