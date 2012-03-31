@@ -234,6 +234,29 @@
             </objects>
             <point key="canvasLocation" x="2467" y="678"/>
         </scene>
+        <scene sceneID="vyp-wq-xwq">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lEj-LU-Inu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="DetailsOnWeb" id="U5w-u5-zpz" customClass="DetailWebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bc7-cB-b6N">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="2fU-aV-J7H">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="2fU-aV-J7H" id="NXU-NY-UEJ"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2145" y="1294"/>
+        </scene>
         <scene sceneID="zek-zL-V9E">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6P-vE-Gpo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -311,7 +334,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2W-MP-RJn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="nz5-JI-pdl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="UZA-A7-O2c"/>
+                    <navigationItem key="navigationItem" id="UZA-A7-O2c">
+                        <barButtonItem key="rightBarButtonItem" title="Details" id="8IH-0H-bIj"/>
+                    </navigationItem>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="uwc-zo-3qz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -328,6 +353,43 @@
     <resources>
         <image name="PullArrow.png" width="21" height="39"/>
     </resources>
+    <classes>
+        <class className="BaseTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseTableViewController.h"/>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="footerImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="footerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="footerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="headerImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="headerView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="DetailWebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailWebViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="EventTableViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="VenueTableViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenueTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="WazaapTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WazaapTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

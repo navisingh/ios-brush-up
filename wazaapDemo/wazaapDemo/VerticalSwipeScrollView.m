@@ -186,7 +186,7 @@
             _headerLoaded = NO;
         }
     }
-    else // The user is dragging up, we are loading/unloading the footer/next page view
+    else if (scrollView.contentOffset.y > 0) // The user is dragging up, we are loading/unloading the footer/next page view
     {
         // If the footer is hidden, then there is no next page and nothing for us to do
         if (footerView.hidden) 
@@ -216,6 +216,10 @@
             //  [externalDelegate performSelector:@selector(footerUnloadedInScrollView:)];
             _footerLoaded = NO;
         }
+    }
+    else if (scrollView.contentOffset.x > 0)
+    {
+        int x=0;
     }
 }
 

@@ -32,6 +32,7 @@
 		5D0718141522707C00324DDB /* VenueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0718131522707B00324DDB /* VenueTableViewController.m */; };
 		5D07181B1522726600324DDB /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D07181A1522726500324DDB /* Utility.m */; };
 		5D07181E152273BD00324DDB /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D07181D152273BC00324DDB /* BaseTableViewController.m */; };
+		5D5A97461526AC3C006B852B /* DetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A97451526AC3C006B852B /* DetailWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		5D07181A1522726500324DDB /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		5D07181C152273BC00324DDB /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		5D07181D152273BC00324DDB /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		5D5A97441526AC3C006B852B /* DetailWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailWebViewController.h; sourceTree = "<group>"; };
+		5D5A97451526AC3C006B852B /* DetailWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,8 @@
 				5D0717C915202D8100324DDB /* DetailViewController.m */,
 				5D0717CB15202DCC00324DDB /* VerticalSwipeScrollView.h */,
 				5D0717CC15202DCC00324DDB /* VerticalSwipeScrollView.m */,
+				5D5A97441526AC3C006B852B /* DetailWebViewController.h */,
+				5D5A97451526AC3C006B852B /* DetailWebViewController.m */,
 				5D07178C1520203900324DDB /* Supporting Files */,
 				5D0718191522726500324DDB /* Utility.h */,
 				5D07181A1522726500324DDB /* Utility.m */,
@@ -324,6 +329,7 @@
 				5D07181B1522726600324DDB /* Utility.m in Sources */,
 				5D07181E152273BD00324DDB /* BaseTableViewController.m in Sources */,
 				183909F71525293200A62E86 /* PullToRefreshView.m in Sources */,
+				5D5A97461526AC3C006B852B /* DetailWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

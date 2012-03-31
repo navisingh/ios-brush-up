@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "DetailWebViewController.h"
 #import "Utility.h"
 
 @interface DetailViewController (PrivateMethods)
@@ -14,6 +15,7 @@
 -(UIWebView*) createWebViewForIndex:(NSUInteger)index;
 -(void)willAppearIn:(UINavigationController *)navigationController;
 - (void) goBack:(id)sender;
+- (void) goToWebPage:(id)sender;
 @end
 
 @implementation DetailViewController
@@ -58,11 +60,38 @@
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(goBack:)];          
     self.navigationItem.leftBarButtonItem = backButton;
+    
+    UIBarButtonItem *webButton = [[UIBarButtonItem alloc] initWithTitle:@"Details" style:UIBarButtonItemStylePlain target:self action:@selector(goToWebPage:)];          
+    self.navigationItem.rightBarButtonItem = webButton;
 }
 
 - (void) goBack:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) goToWebPage:(id)sender
+{
+    NSString *sPermalink;
+    id siteData = [appData objectAtIndex:verticalSwipeScrollView.currentPageIndex];
+    id title = [siteData objectForKey:@"permalink"];
+    if ([title isKindOfClass:[NSString class]]) {
+        NSString *utf8String = title;
+        @try {
+            NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+            sPermalink = correctString;
+        }
+        @catch (NSException *exception) {
+            sPermalink = utf8String;
+        }
+        @finally {
+        }
+    }
+    DetailWebViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsOnWeb"];
+    vc.urlAddress = sPermalink;
+    vc.siteData = siteData;
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void) rotateImageView:(UIImageView*)imageView angle:(CGFloat)angle
