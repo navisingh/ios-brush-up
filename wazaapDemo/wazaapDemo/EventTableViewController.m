@@ -209,9 +209,6 @@
          
         dvc.appData = self.entities;
         dvc.startIndex = indexPath.row;
-        
-//        if ([dvc respondsToSelector:@selector(willAppearIn:)])
-//            [dvc performSelector:@selector(willAppearIn:) withObject:navigationController];
 	}
 }
 

@@ -13,6 +13,7 @@
 -(void)hideGradientBackground:(UIView*)theView;
 -(UIWebView*) createWebViewForIndex:(NSUInteger)index;
 -(void)willAppearIn:(UINavigationController *)navigationController;
+- (void) goBack:(id)sender;
 @end
 
 @implementation DetailViewController
@@ -54,6 +55,14 @@
    
     self.verticalSwipeScrollView = [[VerticalSwipeScrollView alloc] initWithFrame:self.view.frame headerView:headerView footerView:footerView startingAt:startIndex delegate:self];
     [self.view addSubview:verticalSwipeScrollView];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(goBack:)];          
+    self.navigationItem.leftBarButtonItem = backButton;
+}
+
+- (void) goBack:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void) rotateImageView:(UIImageView*)imageView angle:(CGFloat)angle
@@ -115,7 +124,6 @@
         }
     }
     
-    //       self.navigationItem.title = [[appData objectAtIndex:page] objectForKey:@"title"];
     if (page > 0)
     {
         id title = [[appData objectAtIndex:page-1] objectForKey:@"title"];
@@ -166,9 +174,7 @@
     
     NSString* htmlFile = [[[NSBundle mainBundle] bundlePath] stringByAppendingString:@"/DetailView.html"];
     
-    NSString* htmlString;
-    
-    htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
+    NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
     
     id title = [[appData objectAtIndex:index] objectForKey:@"title"];
     if ([title isKindOfClass:[NSString class]]) 
