@@ -45,43 +45,59 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
 
 - (void)viewDidLoad
 {
-  headerImageView.transform = CGAffineTransformMakeRotation(DegreesToRadians(180));
+    headerImageView.transform = CGAffineTransformMakeRotation(DegreesToRadians(180));
+}
+
+- (void)viewDidUnload
+{
+    self.headerView = nil;
+    self.headerImageView = nil;
+    self.headerLabel = nil;
+    
+    self.footerView = nil;
+    self.footerImageView = nil;
+    self.footerLabel = nil;
+}
+
+- (void) dealloc
+{
+    int x=0;
 }
 
 -(void)willAppearIn:(UINavigationController *)navigationController
 {
-  self.verticalSwipeScrollView = [[[VerticalSwipeScrollView alloc] initWithFrame:self.view.frame headerView:headerView footerView:footerView startingAt:startIndex delegate:self] autorelease];
-  [self.view addSubview:verticalSwipeScrollView];
+    self.verticalSwipeScrollView = [[VerticalSwipeScrollView alloc] initWithFrame:self.view.frame headerView:headerView footerView:footerView startingAt:startIndex delegate:self];
+    [self.view addSubview:verticalSwipeScrollView];
 }
 
 - (void) rotateImageView:(UIImageView*)imageView angle:(CGFloat)angle
 {
-  [UIView beginAnimations:nil context:nil];
-  [UIView setAnimationDuration:0.2];
-  imageView.transform = CGAffineTransformMakeRotation(DegreesToRadians(angle));
-  [UIView commitAnimations];
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.2];
+    imageView.transform = CGAffineTransformMakeRotation(DegreesToRadians(angle));
+    [UIView commitAnimations];
 }
 
 # pragma mark VerticalSwipeScrollViewDelegate
 
 -(void) headerLoadedInScrollView:(VerticalSwipeScrollView*)scrollView
 {
-  [self rotateImageView:headerImageView angle:0];
+    [self rotateImageView:headerImageView angle:0];
 }
 
 -(void) headerUnloadedInScrollView:(VerticalSwipeScrollView*)scrollView
 {
-  [self rotateImageView:headerImageView angle:180];
+    [self rotateImageView:headerImageView angle:180];
 }
 
 -(void) footerLoadedInScrollView:(VerticalSwipeScrollView*)scrollView
 {
-  [self rotateImageView:footerImageView angle:180];
+    [self rotateImageView:footerImageView angle:180];
 }
 
 -(void) footerUnloadedInScrollView:(VerticalSwipeScrollView*)scrollView
 {
-  [self rotateImageView:footerImageView angle:0];
+    [self rotateImageView:footerImageView angle:0];
 }
 
 -(UIView*) viewForScrollView:(VerticalSwipeScrollView*)scrollView atPage:(NSUInteger)page
@@ -89,9 +105,9 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     UIWebView* webView = nil;
     
     if (page < scrollView.currentPageIndex)
-        webView = [[previousPage retain] autorelease];
+        webView = previousPage;
     else if (page > scrollView.currentPageIndex)
-        webView = [[nextPage retain] autorelease];
+        webView = nextPage;
     
     if (!webView)
         webView = [self createWebViewForIndex:page];
@@ -99,27 +115,65 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     self.previousPage = page > 0 ? [self createWebViewForIndex:page-1] : nil;
     self.nextPage = (page == (appData.count-1)) ? nil : [self createWebViewForIndex:page+1];
     
-    NSString *utf8String = [[appData objectAtIndex:page] objectForKey:@"title"];
+    id title = [[appData objectAtIndex:page] objectForKey:@"title"];
+    if ([title isKindOfClass:[NSString class]]) {
+        NSString *utf8String = title;
+        @try {
+            NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+            self.navigationItem.title = correctString;
+        }
+        @catch (NSException *exception) {
+            self.navigationItem.title = utf8String;
+        }
+        @finally {
+        }
+    }
     
-    NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
-    self.navigationItem.title = correctString;
     //       self.navigationItem.title = [[appData objectAtIndex:page] objectForKey:@"title"];
     if (page > 0)
-        headerLabel.text = [[appData objectAtIndex:page-1] objectForKey:@"title"];
+    {
+        id title = [[appData objectAtIndex:page-1] objectForKey:@"title"];
+        if ([title isKindOfClass:[NSString class]]) {
+            NSString *utf8String = title;
+            @try {
+                NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+                headerLabel.text = correctString;
+            }
+            @catch (NSException *exception) {
+                headerLabel.text = utf8String;
+            }
+            @finally {
+            }
+        }
+    }
     if (page != appData.count-1)
-        footerLabel.text = [[appData objectAtIndex:page+1] objectForKey:@"title"] ;
+    {
+        id title = [[appData objectAtIndex:page+1] objectForKey:@"title"];
+        if ([title isKindOfClass:[NSString class]]) {
+            NSString *utf8String = title;
+            @try {
+                NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+                footerLabel.text = correctString;
+            }
+            @catch (NSException *exception) {
+                footerLabel.text = utf8String;
+            }
+            @finally {
+            }
+        }
+    }
     
     return webView;
 }
 
 -(NSUInteger) pageCount
 {
-  return appData.count;
+    return appData.count;
 }
 
 -(UIWebView*) createWebViewForIndex:(NSUInteger)index
 {
-    UIWebView* webView = [[[UIWebView alloc] initWithFrame:self.view.frame] autorelease];
+    UIWebView* webView = [[UIWebView alloc] initWithFrame:self.view.frame];
     webView.opaque = NO;
     [webView setBackgroundColor:[UIColor clearColor]];
     [self hideGradientBackground:webView];
@@ -129,15 +183,22 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     NSString* htmlString;
     
     htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- title -->" withString:[[appData objectAtIndex:index] objectForKey:@"title"]];
-    @try {
-        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- icon -->" withString:[[appData objectAtIndex:index] objectForKey:@"image"]];
+
+    id title = [[appData objectAtIndex:index] objectForKey:@"title"];
+    if ([title isKindOfClass:[NSString class]]) 
+        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- title -->" withString:title];
+
+    id image = [[appData objectAtIndex:index] objectForKey:@"image"];
+    if ([image isKindOfClass:[NSString class]]) {
+        NSString *img = [[appData objectAtIndex:index] objectForKey:@"image"];
+        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- icon -->" withString:img];
     }
-    @catch (NSException *exception) {
-    }
-    @finally {
-    }
-    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- content -->" withString:[[appData objectAtIndex:index] objectForKey:@"description"] ];
+        
+    
+    id desc = [[appData objectAtIndex:index] objectForKey:@"description"];
+    if ([desc isKindOfClass:[NSString class]]) 
+        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- content -->" withString:desc];
+    
     [webView loadHTMLString:htmlString baseURL:nil];
     
     return webView;
@@ -145,42 +206,15 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
 
 - (void) hideGradientBackground:(UIView*)theView
 {
-  for (UIView * subview in theView.subviews)
-  {
-    if ([subview isKindOfClass:[UIImageView class]])
-      subview.hidden = YES;
-
-    [self hideGradientBackground:subview];
-  }
+    for (UIView * subview in theView.subviews)
+    {
+        if ([subview isKindOfClass:[UIImageView class]])
+            subview.hidden = YES;
+        
+        [self hideGradientBackground:subview];
+    }
 }
 
-- (void)viewDidUnload
-{
-  self.headerView = nil;
-  self.headerImageView = nil;
-  self.headerLabel = nil;
 
-  self.footerView = nil;
-  self.footerImageView = nil;
-  self.footerLabel = nil;
-}
-
-- (void)dealloc
-{
-  [headerView release];
-  [headerImageView release];
-  [headerLabel release];
-
-  [footerView release];
-  [footerImageView release];
-  [footerLabel release];
-
-  [verticalSwipeScrollView release];
-  [appData release];
-  [previousPage release];
-  [nextPage release];
-
-  [super dealloc];
-}
 
 @end

@@ -38,7 +38,7 @@ void onUncaughtException(NSException *exception)
     
     {
         WazaapEntity *we = [[WazaapEntity alloc] init];
-        we.name = @"Venue";
+        we.name = @"Venues";
         we.detail = @"Where do I go around here?";
         [entities addObject:we];
     }

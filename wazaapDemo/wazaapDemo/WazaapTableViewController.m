@@ -10,11 +10,11 @@
 #import "WazaapEntity.h"
 #import "BaseTableViewController.h"
 #import "EventTableViewController.h"
-#import "DiningTableViewController.h"
+#import "VenueTableViewController.h"
 
 
 #define EVENT_URL @"http://sf.wazaap.in/wp-content/plugins/wz_reloaded/action.php?action=search&category=deals,nightlife,nightlife-clubbing,nightlife-eatingdrinking,nightlife-others,nightlife-comedy,nightlife-music,nightlife-dance,nightlife-movies,offbeat,offbeat-films,offbeat-music,offbeat-other,offbeat-performingarts,offbeat-visualarts,offbeat-literature,challenges,challenges-volunteering,challenges-sportsrecreation,challenges-others,challenges-networking,challenges-hobbies,challenges-classes,challenges-lecturesworkshops,others,others-artscrafts,others-festivals,others-others,others-social,others-sports,others-tours,deals,nightlife,offbeat,challenges"
-#define DINING_URL @"http://sf.wazaap.in/wp-content/plugins/wz_reloaded/action.php?action=search&category=deals,nightlife,nightlife-clubbing,nightlife-eatingdrinking,nightlife-others,nightlife-comedy,nightlife-music,nightlife-dance,nightlife-movies,offbeat,offbeat-films,offbeat-music,offbeat-other,offbeat-performingarts,offbeat-visualarts,offbeat-literature,challenges,challenges-volunteering,challenges-sportsrecreation,challenges-others,challenges-networking,challenges-hobbies,challenges-classes,challenges-lecturesworkshops,others,others-artscrafts,others-festivals,others-others,others-social,others-sports,others-tours,deals,nightlife,offbeat,challenges"
+#define VENUE_URL @"http://sf.wazaap.in/wp-content/plugins/wz_reloaded/action.php?action=search&category=deals,nightlife,nightlife-clubbing,nightlife-eatingdrinking,nightlife-others,nightlife-comedy,nightlife-music,nightlife-dance,nightlife-movies,offbeat,offbeat-films,offbeat-music,offbeat-other,offbeat-performingarts,offbeat-visualarts,offbeat-literature,challenges,challenges-volunteering,challenges-sportsrecreation,challenges-others,challenges-networking,challenges-hobbies,challenges-classes,challenges-lecturesworkshops,others,others-artscrafts,others-festivals,others-others,others-social,others-sports,others-tours,deals,nightlife,offbeat,challenges"
 
 @interface WazaapTableViewController (PrivateMethods)
 - (void) makeConnectionWithURL:(NSString *)URLString;
@@ -180,11 +180,11 @@
     if ([self.entity.name isEqualToString:@"Events"]) {
         [self makeConnectionWithURL:EVENT_URL];
     }
-    else if ([self.entity.name isEqualToString:@"Dining"]) {
-        [self makeConnectionWithURL:DINING_URL];
+    else if ([self.entity.name isEqualToString:@"Venues"]) {
+        [self makeConnectionWithURL:VENUE_URL];
     }
     else if ([self.entity.name isEqualToString:@"Friends"]) {
-        [self makeConnectionWithURL:DINING_URL];
+        [self makeConnectionWithURL:VENUE_URL];
     }
     
 }
@@ -253,13 +253,14 @@
         tvc = [self.storyboard instantiateViewControllerWithIdentifier:entity.name];
         tvc.entities = [json objectForKey:@"events"];
     }
-    else if ([self.entity.name isEqualToString:@"Dining"]) {
+    else if ([self.entity.name isEqualToString:@"Venues"]) {
         tvc = [self.storyboard instantiateViewControllerWithIdentifier:entity.name];
 #warning TBD. need to change this to dining later.        
         tvc.entities = [json objectForKey:@"events"];
     }
     else if ([self.entity.name isEqualToString:@"Friends"]) {
 #warning TBD. handle other cases.
+        tvc.entities = [json objectForKey:@"events"];
     }
     
     if (tvc) {

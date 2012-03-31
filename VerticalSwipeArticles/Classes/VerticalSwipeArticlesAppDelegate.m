@@ -27,14 +27,13 @@
 
 #import "VerticalSwipeArticlesAppDelegate.h"
 #import "RootViewController.h"
-#import "JSON.h"
 
 #define TOP_APPS_URL @"http://itunes.apple.com/us/rss/toppaidapplications/limit=25/json"
 
 #define WAZAAP_URL @"http://sf.wazaap.in/wp-content/plugins/wz_reloaded/action.php?action=search&category=deals,nightlife,nightlife-clubbing,nightlife-eatingdrinking,nightlife-others,nightlife-comedy,nightlife-music,nightlife-dance,nightlife-movies,offbeat,offbeat-films,offbeat-music,offbeat-other,offbeat-performingarts,offbeat-visualarts,offbeat-literature,challenges,challenges-volunteering,challenges-sportsrecreation,challenges-others,challenges-networking,challenges-hobbies,challenges-classes,challenges-lecturesworkshops,others,others-artscrafts,others-festivals,others-others,others-social,others-sports,others-tours,deals,nightlife,offbeat,challenges"
 /*
  #define WAZAAP_URL @"http://sf.wazaap.in/wp-content/plugins/wz_reloaded/action.php?action=search&category=deals,nightlife,nightlife-clubbing,nightlife-eatingdrinking,nightlife-others,nightlife-comedy,nightlife-music,nightlife-dance,nightlife-movies,offbeat,offbeat-films,offbeat-music,offbeat-other,offbeat-performingarts,offbeat-visualarts,offbeat-literature,challenges,challenges-volunteering,challenges-sportsrecreation,challenges-others,challenges-networking,challenges-hobbies,challenges-classes,challenges-lecturesworkshops,others,others-artscrafts,others-festivals,others-others,others-social,others-sports,others-tours,deals,nightlife,offbeat,challenges,others&sort_by=chronological&sort_order=asc&items_per_page=15&page=2&start_before=23"
-*/
+ */
 @implementation VerticalSwipeArticlesAppDelegate
 
 @synthesize window;
@@ -51,21 +50,15 @@
     navigationController.delegate = self;
     
     
-    if (WAZAAP_MODE) {
-        NSURLRequest *request2 = [NSURLRequest requestWithURL:[NSURL URLWithString:WAZAAP_URL]];
-        
-        NSURLConnection* topAppsConnection2 = [[[NSURLConnection alloc] initWithRequest:request2 delegate:self] autorelease];
-        if (topAppsConnection2)
-            self.topAppsData2 = [NSMutableData data];
-    }
-    else{
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:TOP_APPS_URL]];
-        
-        NSURLConnection* topAppsConnection = [[[NSURLConnection alloc] initWithRequest:request delegate:self] autorelease];
-        if (topAppsConnection)
-            self.topAppsData = [NSMutableData data];
-    }
+    NSURLRequest *request2 = [NSURLRequest requestWithURL:[NSURL URLWithString:WAZAAP_URL]];
     
+    NSURLConnection* topAppsConnection2 = [[NSURLConnection alloc] initWithRequest:request2 delegate:self];
+    if (topAppsConnection2)
+        self.topAppsData2 = [NSMutableData data];
+    
+    
+    RootViewController* rvc = (RootViewController*)[navigationController.viewControllers objectAtIndex:0];
+//    self.window.rootViewController = rvc;
     
     [self.window addSubview:loadingView];
     [self.window makeKeyAndVisible];
@@ -75,8 +68,8 @@
 
 - (void)navigationController:(UINavigationController *)navController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-  if ([viewController respondsToSelector:@selector(willAppearIn:)])
-    [viewController performSelector:@selector(willAppearIn:) withObject:navController];
+    if ([viewController respondsToSelector:@selector(willAppearIn:)])
+        [viewController performSelector:@selector(willAppearIn:) withObject:navController];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -128,78 +121,51 @@
 
 - (void) cancel:(NSURLConnection *)connection
 {
-  [connection cancel];
-  self.topAppsData = nil;
+    [connection cancel];
+    self.topAppsData = nil;
 }
 
 #pragma mark NSURLConnectionDelegate
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-  NSInteger status = [(NSHTTPURLResponse*)response statusCode];
-
-  if (status != 200)
-    [self cancel:connection];
+    NSInteger status = [(NSHTTPURLResponse*)response statusCode];
+    
+    if (status != 200)
+        [self cancel:connection];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-  [self cancel:connection];
+    [self cancel:connection];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    if (WAZAAP_MODE) {
         [topAppsData2 appendData:data];
-    }
-    else
-    {
-        [topAppsData appendData:data];
-    }
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     RootViewController* rootViewController = (RootViewController*)[navigationController.viewControllers objectAtIndex:0];
-
-    if (WAZAAP_MODE) {
-        NSString* topAppsString = [[[NSString alloc] initWithData:topAppsData2 encoding:NSUTF8StringEncoding] autorelease]; 
-         
-        @try {
-            
-            NSError *error;
-            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:topAppsData2 options:kNilOptions error:&error];
-            rootViewController.topApps = [json objectForKey:@"events"];
-            
- //           rootViewController.topApps = [[topAppsString JSONValue] objectForKey:@"events"];
-
-            [self.window addSubview:navigationController.view];
-        }
-        @catch (NSException * e) {
-        }
+    
+    NSString* topAppsString = [[NSString alloc] initWithData:topAppsData2 encoding:NSUTF8StringEncoding]; 
+    
+    @try {
         
-        self.topAppsData2 = nil;
-    }
-    else
-    {
-        NSString* topAppsString = [[[NSString alloc] initWithData:topAppsData encoding:NSUTF8StringEncoding] autorelease]; 
-        self.topAppsData = nil;
+        NSError *error;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:topAppsData2 options:kNilOptions error:&error];
+        rootViewController.topApps = [json objectForKey:@"events"];
         
-        @try {
-            rootViewController.topApps = [[[topAppsString JSONValue] objectForKey:@"feed"]objectForKey:@"entry"];
-            [self.window addSubview:navigationController.view];
-        }
-        @catch (NSException * e) {
-        }
+        //           rootViewController.topApps = [[topAppsString JSONValue] objectForKey:@"events"];
+        
+        [self.window addSubview:navigationController.view];
     }
+    @catch (NSException * e) {
+    }
+    
+    self.topAppsData2 = nil;
 }
 
-- (void)dealloc {
-  [topAppsData release];
-  [loadingView release];
-  [navigationController release];
-  [window release];
-  [super dealloc];
-}
 
 
 @end

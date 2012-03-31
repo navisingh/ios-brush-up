@@ -31,55 +31,58 @@
 
 @synthesize topApps, detailViewController;
 
+
 - (void)viewDidLoad
 {
-  [super viewDidLoad];
-  self.title = @"Top Paid Apps";
+    [super viewDidLoad];
+    self.title = @"Events";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return topApps.count;
+    return topApps.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-  static NSString *CellIdentifier = @"Cell";
-
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  if (cell == nil)
-    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-
-  cell.textLabel.numberOfLines = 2;
     
-    if (WAZAAP_MODE) {
-        cell.textLabel.text = [[topApps objectAtIndex:indexPath.row] objectForKey:@"title"];
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    
+    cell.textLabel.numberOfLines = 2;
+    
+    id title = [[topApps objectAtIndex:indexPath.row] objectForKey:@"title"];
+    if ([title isKindOfClass:[NSString class]]) {
+        NSString *utf8String = title;
+        @try {
+            NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+            cell.textLabel.text = correctString;
+        }
+        @catch (NSException *exception) {
+            cell.textLabel.text = utf8String;
+        }
+        @finally {
+        }
     }
-    else{
-        cell.textLabel.text = [[[topApps objectAtIndex:indexPath.row] objectForKey:@"im:name"] objectForKey:@"label"];
-    }
-  return cell;
+    
+    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  return 50;
+    return 50;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  self.detailViewController = [[[DetailViewController alloc] initWithNibName:nil bundle:nil] autorelease];
-  detailViewController.appData = topApps;
-  detailViewController.startIndex = indexPath.row;
-  [self.navigationController pushViewController:detailViewController animated:YES];
+    self.detailViewController = [[DetailViewController alloc] initWithNibName:nil bundle:nil];
+    detailViewController.appData = topApps;
+    detailViewController.startIndex = indexPath.row;
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
-- (void)dealloc
-{
-  [topApps release];
-  [detailViewController release];
-  [super dealloc];
-}
 
 
 @end

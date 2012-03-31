@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="9Cg-VT-2tu">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="9Cg-VT-2tu">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -104,13 +104,13 @@
         <scene sceneID="QJk-cT-gSR">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vka-E2-vTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController storyboardIdentifier="Dining" id="4la-97-Tpn" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Venues" id="4la-97-Tpn" customClass="VenueTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r6J-d0-w72">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DiningCell" textLabel="zYo-2K-xDx" detailTextLabel="cJv-DH-5p6" style="IBUITableViewCellStyleSubtitle" id="gBn-9Y-nXP">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VenueCell" textLabel="zYo-2K-xDx" detailTextLabel="cJv-DH-5p6" style="IBUITableViewCellStyleSubtitle" id="gBn-9Y-nXP">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -134,6 +134,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="nz5-JI-pdl" kind="modal" identifier="ShowDetails" modalTransitionStyle="flipHorizontal" id="vZ7-Vu-jK8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -169,15 +172,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="uf7-30-5qE" userLabel="Header View">
-                                <rect key="frame" x="0.0" y="93" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="93" width="320" height="74"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="PullArrow.png" id="dSK-oP-ZXr">
-                                        <rect key="frame" x="13" y="4" width="21" height="39"/>
+                                        <rect key="frame" x="13" y="4" width="21" height="74"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="Lfg-qE-QYf">
-                                        <rect key="frame" x="59" y="14" width="241" height="21"/>
+                                        <rect key="frame" x="59" y="17" width="261" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -187,15 +190,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="Lse-XL-Qfw" userLabel="Footer View">
-                                <rect key="frame" x="0.0" y="266" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="266" width="320" height="74"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="PullArrow.png" id="gRb-Ak-oBt">
-                                        <rect key="frame" x="13" y="4" width="21" height="39"/>
+                                        <rect key="frame" x="13" y="4" width="21" height="74"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="V2P-Fc-qza">
-                                        <rect key="frame" x="59" y="14" width="241" height="21"/>
+                                        <rect key="frame" x="59" y="13" width="261" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -229,7 +232,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2987" y="320"/>
+            <point key="canvasLocation" x="2467" y="678"/>
         </scene>
         <scene sceneID="zek-zL-V9E">
             <objects>
@@ -319,7 +322,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1927" y="320"/>
+            <point key="canvasLocation" x="2051" y="678"/>
         </scene>
     </scenes>
     <resources>
@@ -346,6 +349,12 @@
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
+        <class className="VenueTableViewController" superclassName="BaseTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenueTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
         <class className="WazaapTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WazaapTableViewController.h"/>
         </class>
@@ -355,4 +364,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="vZ7-Vu-jK8"/>
+    </inferredMetricsTieBreakers>
 </document>

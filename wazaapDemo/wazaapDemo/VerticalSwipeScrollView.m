@@ -55,7 +55,7 @@
 }
 
 // Setup for init method with explicit values
-- (id) initWithFrame:(CGRect)frame headerView:(UIView*)theHeaderView footerView:(UIView*)theFooterView startingAt:(NSUInteger)pageIndex delegate:(id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate>)verticalSwipeDelegate
+- (id) initWithFrame:(CGRect)frame headerView:(UIView*)hv footerView:(UIView*)fv startingAt:(NSUInteger)pageIndex delegate:(id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate>)verticalSwipeDelegate
 {
     self = [super initWithFrame:frame];
     if (self)
@@ -63,8 +63,8 @@
         self.alwaysBounceVertical = YES;
         self.delegate = verticalSwipeDelegate;
         self.currentPageIndex = pageIndex;
-        self.headerView = theHeaderView;
-        self.footerView = theFooterView;
+        self.headerView = hv;
+        self.footerView = fv;
         self.contentSize = self.frame.size;
     }
     return self;
@@ -82,17 +82,16 @@
 
 // The header view is what appears when you pull the
 // scroll view down to get to the previous page
--(void) setHeaderView:(UIView*)newValue
+-(void) setHeaderView:(UIView*)hv
 {
-    if (headerView != newValue)
+    if (headerView != hv)
     {
         // Standard setter code
         [headerView removeFromSuperview];
-        headerView = newValue;
-        
+        headerView = hv;
         
         // Place the header above the scroll view
-        headerView.frame = CGRectMake(0, -headerView.frame.size.height, headerView.frame.size.width, headerView.frame.size.height);
+        headerView.frame = CGRectMake(0, -hv.frame.size.height, hv.frame.size.width, hv.frame.size.height);
         [self addSubview:headerView];
         
         // Hide the header if there is no previous page
@@ -103,13 +102,13 @@
 
 // The footer view is what appears when you pull the
 // scroll view up to get to the next page
--(void) setFooterView:(UIView*)newValue
+-(void) setFooterView:(UIView*)fv
 {
-    if (footerView != newValue)
+    if (footerView != fv)
     {
         // Standard setter code
         [footerView removeFromSuperview];
-        footerView = newValue;
+        footerView = fv;
         
         // Place the footer below the scroll view
         footerView.frame = CGRectMake(0, self.frame.size.height, footerView.frame.size.width, footerView.frame.size.height);
@@ -151,50 +150,59 @@
         [externalDelegate scrollViewDidScroll:scrollView];
     
     // Everything we want to do is only applicable if the user is in the middle of dragging
-    if (!scrollView.dragging) return;
+    if (!scrollView.dragging) 
+        return;
     
     // The user is dragging down, we are loading/unloading the header/previous page view
     if (scrollView.contentOffset.y < 0)
     {
         // If the header is hidden, then there is no previous page and nothing for us to do
-        if (headerView.hidden) return;
+        if (headerView.hidden) 
+            return;
         
         // If the user has pulled down more than the height of the header
         if (scrollView.contentOffset.y < -headerView.frame.size.height)
         {
             // The header is already loaded, nothing for us to do
-            if (_headerLoaded) return;
+            if (_headerLoaded) 
+                return;
             
             // The header has been loaded
             if ([externalDelegate respondsToSelector:@selector(headerLoadedInScrollView:)])
-                [externalDelegate performSelector:@selector(headerLoadedInScrollView:)];
+                [externalDelegate headerLoadedInScrollView:self];
+            //               [externalDelegate performSelector:@selector(headerLoadedInScrollView:)];
             _headerLoaded = YES;
         }
         else // The user has pulled down less than the height of the header
         {
             // If the header isn't already loaded, nothing for us to do
-            if (!_headerLoaded) return;
+            if (!_headerLoaded) 
+                return;
             
             // The header has been unloaded
             if ([externalDelegate respondsToSelector:@selector(headerUnloadedInScrollView:)])
-                [externalDelegate performSelector:@selector(headerUnloadedInScrollView:)];
+                [externalDelegate headerUnloadedInScrollView:self];
+            //[externalDelegate performSelector:@selector(headerUnloadedInScrollView:)];
             _headerLoaded = NO;
         }
     }
     else // The user is dragging up, we are loading/unloading the footer/next page view
     {
         // If the footer is hidden, then there is no next page and nothing for us to do
-        if (footerView.hidden) return;
+        if (footerView.hidden) 
+            return;
         
         // If the user has pulled up more than the height of the footer
         if (scrollView.contentOffset.y > footerView.frame.size.height)
         {
             // The footer is already loaded, nothing for us to do
-            if (_footerLoaded) return;
+            if (_footerLoaded) 
+                return;
             
             // The footer has been loaded
             if ([externalDelegate respondsToSelector:@selector(footerLoadedInScrollView:)])
-                [externalDelegate performSelector:@selector(footerLoadedInScrollView:)];
+                [externalDelegate footerLoadedInScrollView:self];
+            //[externalDelegate performSelector:@selector(footerLoadedInScrollView:)];
             _footerLoaded = YES;
         }
         else // The user has pulled up less than the height of the footer
@@ -204,7 +212,8 @@
             
             // The footer has been unloaded
             if ([externalDelegate respondsToSelector:@selector(footerUnloadedInScrollView:)])
-                [externalDelegate performSelector:@selector(footerUnloadedInScrollView:)];
+                [externalDelegate footerUnloadedInScrollView:self];
+            //  [externalDelegate performSelector:@selector(footerUnloadedInScrollView:)];
             _footerLoaded = NO;
         }
     }
@@ -283,11 +292,13 @@
     
     // After we've switched pages, reset the header/footer loaded states
     if (_footerLoaded && [externalDelegate respondsToSelector:@selector(footerUnloadedInScrollView:)])
-        [externalDelegate performSelector:@selector(footerUnloadedInScrollView:)];
+        [externalDelegate footerUnloadedInScrollView:self];
+    //        [externalDelegate performSelector:@selector(footerUnloadedInScrollView:)];
     _footerLoaded = NO;
     
     if (_headerLoaded && [externalDelegate respondsToSelector:@selector(headerUnloadedInScrollView:)])
-        [externalDelegate performSelector:@selector(headerUnloadedInScrollView:)];
+        [externalDelegate headerUnloadedInScrollView:self];
+    //        [externalDelegate performSelector:@selector(headerUnloadedInScrollView:)];
     _headerLoaded = NO;
     
     // Force the header and footer views to their default states
@@ -351,14 +362,10 @@
 
 - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
 {
-  if ([externalDelegate respondsToSelector:@selector(scrollViewDidScrollToTop:)])
-    [externalDelegate scrollViewDidScrollToTop:scrollView];
+    if ([externalDelegate respondsToSelector:@selector(scrollViewDidScrollToTop:)])
+        [externalDelegate scrollViewDidScrollToTop:scrollView];
 }
 
-- (void)dealloc
-{
-    int x=0;
-}
 
 
 @end

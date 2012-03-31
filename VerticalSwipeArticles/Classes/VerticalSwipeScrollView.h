@@ -38,24 +38,19 @@
 
 @interface VerticalSwipeScrollView : UIScrollView <UIScrollViewDelegate>
 {
-  id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate> externalDelegate;
-
-  IBOutlet UIView* headerView;
-  IBOutlet UIView* footerView;
-  
-  BOOL _headerLoaded;
-  BOOL _footerLoaded;
-  
-  NSUInteger currentPageIndex;
-  UIView* currentPageView;
+    BOOL _headerLoaded;
+    BOOL _footerLoaded;
 }
 
-@property (nonatomic, assign) id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate> externalDelegate;
-@property (nonatomic, retain) IBOutlet UIView* headerView;
-@property (nonatomic, retain) IBOutlet UIView* footerView;
+@property (nonatomic, unsafe_unretained) id<VerticalSwipeScrollViewDelegate, UIScrollViewDelegate> externalDelegate;
+@property (nonatomic, strong) IBOutlet UIView* headerView;
+@property (nonatomic, strong) IBOutlet UIView* footerView;
+@property (nonatomic, strong) UIView* currentPageView;
 @property (nonatomic) NSUInteger currentPageIndex;
-@property (nonatomic, retain) UIView* currentPageView;
 
-- (id) initWithFrame:(CGRect)frame headerView:(UIView*)headerView footerView:(UIView*)footerView startingAt:(NSUInteger)pageIndex delegate:(id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate>)verticalSwipeDelegate;
+- (id) initWithFrame:(CGRect)frame headerView:(UIView*)headerView 
+          footerView:(UIView*)footerView 
+          startingAt:(NSUInteger)pageIndex 
+            delegate:(id<VerticalSwipeScrollViewDelegate,UIScrollViewDelegate>)verticalSwipeDelegate;
 
 @end

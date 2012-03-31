@@ -27,18 +27,13 @@
 
 @interface VerticalSwipeArticlesAppDelegate : NSObject <UIApplicationDelegate, UINavigationControllerDelegate>
 {
-  UIWindow *window;
-  UINavigationController *navigationController;
-  UIView *loadingView;
-  NSMutableData *topAppsData;
-  NSMutableData *topAppsData2;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
-@property (nonatomic, retain) IBOutlet UIView *loadingView;
-@property (nonatomic, retain) NSMutableData *topAppsData;
-@property (nonatomic, retain) NSMutableData *topAppsData2;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet UINavigationController *navigationController;
+@property (nonatomic, strong) IBOutlet UIView *loadingView;
+@property (nonatomic, strong) NSMutableData *topAppsData;
+@property (nonatomic, strong) NSMutableData *topAppsData2;
 
 
 @end

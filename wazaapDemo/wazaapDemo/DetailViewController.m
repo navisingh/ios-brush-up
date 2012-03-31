@@ -28,6 +28,22 @@
     [self willAppearIn:nil];
 }
 
+- (void)viewDidUnload
+{
+    self.headerView = nil;
+    self.headerImageView = nil;
+    self.headerLabel = nil;
+    
+    self.footerView = nil;
+    self.footerImageView = nil;
+    self.footerLabel = nil;
+}
+
+- (void) dealloc
+{
+    int x=0;
+}
+
 -(void)willAppearIn:(UINavigationController *)navigationController
 {
     CGRect frame;
@@ -35,9 +51,8 @@
     frame.origin.y = 0;
     frame.size.width = 320;
     frame.size.height = 416;
-
-    self.verticalSwipeScrollView = [[VerticalSwipeScrollView alloc] initWithFrame:frame headerView:headerView footerView:footerView startingAt:startIndex delegate:self] ;
-//    self.verticalSwipeScrollView = [[VerticalSwipeScrollView alloc] initWithFrame:self.view.frame headerView:headerView footerView:footerView startingAt:startIndex delegate:self] ;
+   
+    self.verticalSwipeScrollView = [[VerticalSwipeScrollView alloc] initWithFrame:self.view.frame headerView:headerView footerView:footerView startingAt:startIndex delegate:self];
     [self.view addSubview:verticalSwipeScrollView];
 }
 
@@ -86,16 +101,52 @@
     self.previousPage = page > 0 ? [self createWebViewForIndex:page-1] : nil;
     self.nextPage = (page == (appData.count-1)) ? nil : [self createWebViewForIndex:page+1];
     
+    id title = [[appData objectAtIndex:page] objectForKey:@"title"];
+    if ([title isKindOfClass:[NSString class]]) {
+        NSString *utf8String = title;
+        @try {
+            NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+            self.navigationItem.title = correctString;
+        }
+        @catch (NSException *exception) {
+            self.navigationItem.title = utf8String;
+        }
+        @finally {
+        }
+    }
+    
+    //       self.navigationItem.title = [[appData objectAtIndex:page] objectForKey:@"title"];
+    if (page > 0)
     {
-        NSString *utf8String = [[appData objectAtIndex:page] objectForKey:@"title"];
-        
-        NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
-        self.navigationItem.title = correctString;
-        //       self.navigationItem.title = [[appData objectAtIndex:page] objectForKey:@"title"];
-        if (page > 0)
-            headerLabel.text = [[appData objectAtIndex:page-1] objectForKey:@"title"];
-        if (page != appData.count-1)
-            footerLabel.text = [[appData objectAtIndex:page+1] objectForKey:@"title"] ;
+        id title = [[appData objectAtIndex:page-1] objectForKey:@"title"];
+        if ([title isKindOfClass:[NSString class]]) {
+            NSString *utf8String = title;
+            @try {
+                NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+                headerLabel.text = correctString;
+            }
+            @catch (NSException *exception) {
+                headerLabel.text = utf8String;
+            }
+            @finally {
+            }
+        }
+    }
+    if (page != appData.count-1)
+    {
+        id title = [[appData objectAtIndex:page+1] objectForKey:@"title"];
+        if ([title isKindOfClass:[NSString class]]) {
+            NSString *utf8String = title;
+            @try {
+                NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+                footerLabel.text = correctString;
+            }
+            @catch (NSException *exception) {
+                footerLabel.text = utf8String;
+            }
+            @finally {
+            }
+        }
     }
     
     return webView;
@@ -117,24 +168,23 @@
     
     NSString* htmlString;
     
-    {
-        htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-        @try {
-            htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- title -->" withString:[[appData objectAtIndex:index] objectForKey:@"title"]];
-        }
-        @catch (NSException *exception) {
-        }
-        @finally {
-        }
-        @try {
-            htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- icon -->" withString:[[appData objectAtIndex:index] objectForKey:@"image"]];
-        }
-        @catch (NSException *exception) {
-        }
-        @finally {
-        }
-        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- content -->" withString:[[appData objectAtIndex:index] objectForKey:@"description"] ];
+    htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
+    
+    id title = [[appData objectAtIndex:index] objectForKey:@"title"];
+    if ([title isKindOfClass:[NSString class]]) 
+        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- title -->" withString:title];
+    
+    id image = [[appData objectAtIndex:index] objectForKey:@"image"];
+    if ([image isKindOfClass:[NSString class]]) {
+        NSString *img = [[appData objectAtIndex:index] objectForKey:@"image"];
+        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- icon -->" withString:img];
     }
+    
+    
+    id desc = [[appData objectAtIndex:index] objectForKey:@"description"];
+    if ([desc isKindOfClass:[NSString class]]) 
+        htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- content -->" withString:desc];
+    
     [webView loadHTMLString:htmlString baseURL:nil];
     
     return webView;
@@ -151,19 +201,6 @@
     }
 }
 
-- (void)viewDidUnload
-{
-    self.headerView = nil;
-    self.headerImageView = nil;
-    self.headerLabel = nil;
-    
-    self.footerView = nil;
-    self.footerImageView = nil;
-    self.footerLabel = nil;
-}
 
-- (void)dealloc
-{
-}
 
 @end

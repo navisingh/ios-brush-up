@@ -25,16 +25,12 @@
 // THE SOFTWARE
 //
 #import "DetailViewController.h"
-#define WAZAAP_MODE 1
-
 
 @interface RootViewController : UITableViewController
 {
-  NSArray *topApps;
-  DetailViewController *detailViewController;
 }
 
-@property (nonatomic, retain) NSArray *topApps;
-@property (nonatomic, retain) DetailViewController *detailViewController;
+@property (nonatomic, strong) NSArray *topApps;
+@property (nonatomic, strong) DetailViewController *detailViewController;
 
 @end
