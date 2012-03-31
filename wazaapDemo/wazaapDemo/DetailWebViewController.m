@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad
 {
+    
     id title = [self.siteData objectForKey:@"title"];
     if ([title isKindOfClass:[NSString class]]) {
         NSString *utf8String = title;
@@ -44,6 +45,10 @@
     //Load the request in the UIWebView.
     [webView loadRequest:requestObj];
 
+}
+
+- (void) viewWillAppear:(BOOL)animated  
+{
 }
 
 - (void)didReceiveMemoryWarning

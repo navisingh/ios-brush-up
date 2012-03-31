@@ -145,6 +145,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="cpm-Qy-9aN"/>
+                    <connections>
+                        <outlet property="tableView" destination="r6J-d0-w72" id="gfj-u1-T86"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1564" y="1005"/>

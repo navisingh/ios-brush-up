@@ -91,7 +91,29 @@
     vc.urlAddress = sPermalink;
     vc.siteData = siteData;
     
+    //we rename the back button in the webview and restore it in viewWillAppear.
+    self.navigationItem.title = @"back";
+    
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void) viewWillAppear:(BOOL)animated  
+{
+    //we got to do this because we changed it when we went to the web view.
+    id siteData = [appData objectAtIndex:verticalSwipeScrollView.currentPageIndex];
+    id title = [siteData objectForKey:@"title"];
+    if ([title isKindOfClass:[NSString class]]) {
+        NSString *utf8String = title;
+        @try {
+            NSString *correctString = [NSString stringWithCString:[utf8String cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
+            self.navigationItem.title = correctString;
+        }
+        @catch (NSException *exception) {
+            self.navigationItem.title = utf8String;
+        }
+        @finally {
+        }
+    }
 }
 
 - (void) rotateImageView:(UIImageView*)imageView angle:(CGFloat)angle
