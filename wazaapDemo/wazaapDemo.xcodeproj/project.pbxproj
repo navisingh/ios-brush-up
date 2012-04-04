@@ -33,6 +33,15 @@
 		5D07181B1522726600324DDB /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D07181A1522726500324DDB /* Utility.m */; };
 		5D07181E152273BD00324DDB /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D07181D152273BC00324DDB /* BaseTableViewController.m */; };
 		5D5A97461526AC3C006B852B /* DetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5A97451526AC3C006B852B /* DetailWebViewController.m */; };
+		5D5A975D1527C57A006B852B /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5A975B1527C57A006B852B /* icon57.png */; };
+		5D5A975E1527C57A006B852B /* icon57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5A975C1527C57A006B852B /* icon57@2x.png */; };
+		5D5A97641527C8E2006B852B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5A97631527C8E2006B852B /* Default.png */; };
+		5D5A97661527C8F1006B852B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D5A97651527C8F1006B852B /* Default@2x.png */; };
+		5D77B487152BBA93000E64DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77B486152BBA93000E64DF /* MapKit.framework */; };
+		5D77B48A152BBAF1000E64DF /* wazaapMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77B489152BBAF1000E64DF /* wazaapMapViewController.m */; };
+		5D77B48D152BC1DB000E64DF /* wazaapConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77B48C152BC1DB000E64DF /* wazaapConnector.m */; };
+		5D77B490152BDA8D000E64DF /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D77B48F152BDA8D000E64DF /* MyLocation.m */; };
+		5D77B496152BE2C8000E64DF /* arrest.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D77B495152BE2C8000E64DF /* arrest.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +96,18 @@
 		5D07181D152273BC00324DDB /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		5D5A97441526AC3C006B852B /* DetailWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailWebViewController.h; sourceTree = "<group>"; };
 		5D5A97451526AC3C006B852B /* DetailWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailWebViewController.m; sourceTree = "<group>"; };
+		5D5A975B1527C57A006B852B /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
+		5D5A975C1527C57A006B852B /* icon57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon57@2x.png"; sourceTree = "<group>"; };
+		5D5A97631527C8E2006B852B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		5D5A97651527C8F1006B852B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		5D77B486152BBA93000E64DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5D77B488152BBAF1000E64DF /* wazaapMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wazaapMapViewController.h; sourceTree = "<group>"; };
+		5D77B489152BBAF1000E64DF /* wazaapMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wazaapMapViewController.m; sourceTree = "<group>"; };
+		5D77B48B152BC1DB000E64DF /* wazaapConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wazaapConnector.h; sourceTree = "<group>"; };
+		5D77B48C152BC1DB000E64DF /* wazaapConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wazaapConnector.m; sourceTree = "<group>"; };
+		5D77B48E152BDA8D000E64DF /* MyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLocation.h; sourceTree = "<group>"; };
+		5D77B48F152BDA8D000E64DF /* MyLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLocation.m; sourceTree = "<group>"; };
+		5D77B495152BE2C8000E64DF /* arrest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrest.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D77B487152BBA93000E64DF /* MapKit.framework in Frameworks */,
 				183909FA15252A2400A62E86 /* QuartzCore.framework in Frameworks */,
 				5D0717861520203900324DDB /* UIKit.framework in Frameworks */,
 				5D0717881520203900324DDB /* Foundation.framework in Frameworks */,
@@ -117,6 +139,7 @@
 		5D0717761520203900324DDB = {
 			isa = PBXGroup;
 			children = (
+				5D77B486152BBA93000E64DF /* MapKit.framework */,
 				183909F915252A2300A62E86 /* QuartzCore.framework */,
 				5D07178B1520203900324DDB /* wazaapDemo */,
 				5D0717A91520203900324DDB /* wazaapDemoTests */,
@@ -151,6 +174,8 @@
 				5D0717971520203900324DDB /* MainStoryboard.storyboard */,
 				5D0717941520203900324DDB /* wazaapAppDelegate.h */,
 				5D0717951520203900324DDB /* wazaapAppDelegate.m */,
+				5D77B48B152BC1DB000E64DF /* wazaapConnector.h */,
+				5D77B48C152BC1DB000E64DF /* wazaapConnector.m */,
 				5D0717C21520243C00324DDB /* WazaapTableViewController.h */,
 				5D0717C31520243C00324DDB /* WazaapTableViewController.m */,
 				5D0717C51520255600324DDB /* WazaapEntity.h */,
@@ -167,6 +192,10 @@
 				5D0717CC15202DCC00324DDB /* VerticalSwipeScrollView.m */,
 				5D5A97441526AC3C006B852B /* DetailWebViewController.h */,
 				5D5A97451526AC3C006B852B /* DetailWebViewController.m */,
+				5D77B488152BBAF1000E64DF /* wazaapMapViewController.h */,
+				5D77B489152BBAF1000E64DF /* wazaapMapViewController.m */,
+				5D77B48E152BDA8D000E64DF /* MyLocation.h */,
+				5D77B48F152BDA8D000E64DF /* MyLocation.m */,
 				5D07178C1520203900324DDB /* Supporting Files */,
 				5D0718191522726500324DDB /* Utility.h */,
 				5D07181A1522726500324DDB /* Utility.m */,
@@ -179,6 +208,11 @@
 		5D07178C1520203900324DDB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5D77B495152BE2C8000E64DF /* arrest.png */,
+				5D5A97651527C8F1006B852B /* Default@2x.png */,
+				5D5A97631527C8E2006B852B /* Default.png */,
+				5D5A975B1527C57A006B852B /* icon57.png */,
+				5D5A975C1527C57A006B852B /* icon57@2x.png */,
 				5D0717D215202E7100324DDB /* DetailView.html */,
 				5D0717CE15202E2800324DDB /* PullArrow.png */,
 				5D0717CF15202E2800324DDB /* PullArrow@2x.png */,
@@ -284,6 +318,11 @@
 				5D0717D015202E2800324DDB /* PullArrow.png in Resources */,
 				5D0717D115202E2800324DDB /* PullArrow@2x.png in Resources */,
 				5D0717D315202E7100324DDB /* DetailView.html in Resources */,
+				5D5A975D1527C57A006B852B /* icon57.png in Resources */,
+				5D5A975E1527C57A006B852B /* icon57@2x.png in Resources */,
+				5D5A97641527C8E2006B852B /* Default.png in Resources */,
+				5D5A97661527C8F1006B852B /* Default@2x.png in Resources */,
+				5D77B496152BE2C8000E64DF /* arrest.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +369,9 @@
 				5D07181E152273BD00324DDB /* BaseTableViewController.m in Sources */,
 				183909F71525293200A62E86 /* PullToRefreshView.m in Sources */,
 				5D5A97461526AC3C006B852B /* DetailWebViewController.m in Sources */,
+				5D77B48A152BBAF1000E64DF /* wazaapMapViewController.m in Sources */,
+				5D77B48D152BC1DB000E64DF /* wazaapConnector.m in Sources */,
+				5D77B490152BDA8D000E64DF /* MyLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +427,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Navi Singh";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -400,6 +443,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "975BE8DF-D73A-48B5-A646-CD62C901F687";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -410,7 +455,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Navi Singh";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -419,6 +465,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "975BE8DF-D73A-48B5-A646-CD62C901F687";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -427,10 +475,12 @@
 		5D0717B51520203900324DDB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wazaapDemo/wazaapDemo-Prefix.pch";
 				INFOPLIST_FILE = "wazaapDemo/wazaapDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -438,10 +488,12 @@
 		5D0717B61520203900324DDB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wazaapDemo/wazaapDemo-Prefix.pch";
 				INFOPLIST_FILE = "wazaapDemo/wazaapDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -11,7 +11,7 @@
 #import "BaseTableViewController.h"
 #import "EventTableViewController.h"
 #import "VenueTableViewController.h"
-
+#import "wazaapConnector.h"
 
 #define EVENT_URL @"http://sf.wazaap.in/wp-content/plugins/wz_reloaded/action.php?action=search&category=deals,nightlife,nightlife-clubbing,nightlife-eatingdrinking,nightlife-others,nightlife-comedy,nightlife-music,nightlife-dance,nightlife-movies,offbeat,offbeat-films,offbeat-music,offbeat-other,offbeat-performingarts,offbeat-visualarts,offbeat-literature,challenges,challenges-volunteering,challenges-sportsrecreation,challenges-others,challenges-networking,challenges-hobbies,challenges-classes,challenges-lecturesworkshops,others,others-artscrafts,others-festivals,others-others,others-social,others-sports,others-tours,deals,nightlife,offbeat,challenges"
 #define VENUE_URL @"http://sf.wazaap.in/wp-content/plugins/wz_reloaded/action.php?action=search&category=deals,nightlife,nightlife-clubbing,nightlife-eatingdrinking,nightlife-others,nightlife-comedy,nightlife-music,nightlife-dance,nightlife-movies,offbeat,offbeat-films,offbeat-music,offbeat-other,offbeat-performingarts,offbeat-visualarts,offbeat-literature,challenges,challenges-volunteering,challenges-sportsrecreation,challenges-others,challenges-networking,challenges-hobbies,challenges-classes,challenges-lecturesworkshops,others,others-artscrafts,others-festivals,others-others,others-social,others-sports,others-tours,deals,nightlife,offbeat,challenges"
@@ -24,7 +24,7 @@
 
 @implementation WazaapTableViewController
 
-@synthesize entities, entity, connectionData;
+@synthesize entities, entity, connectorDelegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -166,6 +166,11 @@
 */
 
 #pragma mark - Table view delegate
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75;
+}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -177,74 +182,22 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 	self.entity = [self.entities objectAtIndex:indexPath.row];
+ 
+    if (!connectorDelegate) {
+        self.connectorDelegate = [[WazaapConnector alloc] initWithDelegate:self];
+    }
+
     
     if ([self.entity.name isEqualToString:@"Events"]) {
-        [self makeConnectionWithURL:EVENT_URL];
+        [self.connectorDelegate makeConnectionWithURL:EVENT_URL];
     }
     else if ([self.entity.name isEqualToString:@"Venues"]) {
-        [self makeConnectionWithURL:VENUE_URL];
+        [self.connectorDelegate makeConnectionWithURL:VENUE_URL];
     }
     else if ([self.entity.name isEqualToString:@"Friends"]) {
-        [self makeConnectionWithURL:VENUE_URL];
+        [self.connectorDelegate makeConnectionWithURL:VENUE_URL];
     }
     
-}
-
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 75;
-}
-
-#pragma mark NSURLConnectionDelegate
-
-- (void) makeConnectionWithURL:(NSString *)URLString
-{
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:URLString]];
-    
-    NSURLConnection* connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    if (connection)
-        self.connectionData = [NSMutableData data];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    NSInteger status = [(NSHTTPURLResponse*)response statusCode];
-    
-    if (status != 200)
-        [self cancel:connection];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    [self cancel:connection];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [connectionData appendData:data];
-}
-
-- (void) cancel:(NSURLConnection *)connection
-{
-    [connection cancel];
-    self.connectionData = nil;
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    //this string is only for debugging.
-    NSString* jsonString = [[NSString alloc] initWithData:connectionData encoding:NSUTF8StringEncoding]; 
-    
-    @try {
-        
-        NSError *error;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:connectionData options:kNilOptions error:&error];
-        [self didReceiveJsonData:json];
-    }
-    @catch (NSException * e) {
-    }
-    
-    self.connectionData = nil;
 }
 
 - (void) didReceiveJsonData:(NSDictionary *)json

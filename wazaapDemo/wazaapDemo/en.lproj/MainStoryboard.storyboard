@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" id="8Sx-M9-CtI"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="692" y="941"/>
+            <point key="canvasLocation" x="1498" y="1079"/>
         </scene>
         <scene sceneID="joa-HJ-jvV">
             <objects>
@@ -99,7 +99,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1552" y="315"/>
+            <point key="canvasLocation" x="596" y="1575"/>
         </scene>
         <scene sceneID="QJk-cT-gSR">
             <objects>
@@ -150,7 +150,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1564" y="1005"/>
+            <point key="canvasLocation" x="596" y="2265"/>
         </scene>
         <scene sceneID="odr-pM-NhS">
             <objects>
@@ -164,7 +164,33 @@
                     <tabBarItem key="tabBarItem" title="Settings" id="pBe-nw-vgg"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="692" y="213"/>
+            <point key="canvasLocation" x="1064" y="-127"/>
+        </scene>
+        <scene sceneID="076-Qa-e0s">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ARf-nA-SpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="0OW-wu-S24" customClass="wazaapMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dvm-8r-ezr">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="hVg-mg-6fC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="0OW-wu-S24" id="10B-OF-lnt"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="Gsg-jA-HLV"/>
+                    <connections>
+                        <outlet property="mapView" destination="hVg-mg-6fC" id="LeB-IU-7a6"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1064" y="488"/>
         </scene>
         <scene sceneID="aeJ-Jg-xJz">
             <objects>
@@ -235,7 +261,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2467" y="678"/>
+            <point key="canvasLocation" x="1559" y="1944"/>
         </scene>
         <scene sceneID="vyp-wq-xwq">
             <objects>
@@ -273,10 +299,11 @@
                     <connections>
                         <segue destination="M2q-mM-6kL" kind="relationship" relationship="viewControllers" id="xis-Ya-pW4"/>
                         <segue destination="6Aq-DD-y6A" kind="relationship" relationship="viewControllers" id="jwE-Ye-hYi"/>
+                        <segue destination="0OW-wu-S24" kind="relationship" relationship="viewControllers" id="84A-xo-Vvn"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="154" y="213"/>
+            <point key="canvasLocation" x="234" y="623"/>
         </scene>
         <scene sceneID="EhO-qc-Avl">
             <objects>
@@ -294,7 +321,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="268" y="941"/>
+            <point key="canvasLocation" x="1064" y="1073"/>
         </scene>
         <scene sceneID="wsZ-hD-aUT">
             <objects>
@@ -312,7 +339,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1134" y="315"/>
+            <point key="canvasLocation" x="178" y="1575"/>
         </scene>
         <scene sceneID="Q25-8W-nir">
             <objects>
@@ -330,7 +357,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1134" y="1005"/>
+            <point key="canvasLocation" x="178" y="2265"/>
         </scene>
         <scene sceneID="OdN-wJ-CBw">
             <objects>
@@ -350,7 +377,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="2051" y="678"/>
+            <point key="canvasLocation" x="1149" y="1944"/>
         </scene>
     </scenes>
     <resources>
@@ -391,6 +418,12 @@
         </class>
         <class className="WazaapTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WazaapTableViewController.h"/>
+        </class>
+        <class className="wazaapMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/wazaapMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

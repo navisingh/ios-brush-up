@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../NaviGamer/CheckersKing/paid/paid/CheckersKingPaid.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:wazaapDemo/wazaapDemo.xcodeproj">
    </FileRef>
    <FileRef

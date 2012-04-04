@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "wazaapConnector.h"
 
 @class WazaapEntity;
-@interface WazaapTableViewController : UITableViewController
+@interface WazaapTableViewController : UITableViewController <WazaapConnectorDelegate>
 {
 }
+
 @property (nonatomic, strong) WazaapEntity *entity;
 @property (nonatomic, strong) NSMutableArray *entities;
-@property (nonatomic, strong) NSMutableData *connectionData;
+@property (nonatomic, strong) WazaapConnector *connectorDelegate;
 
 @end
 

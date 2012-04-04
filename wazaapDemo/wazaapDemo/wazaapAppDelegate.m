@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+//List of icons thtat need to be added to app.
+//http://developer.apple.com/library/ios/#documentation/userexperience/conceptual/mobilehig/IconsImages/IconsImages.html
+
 #import "wazaapAppDelegate.h"
 #import "wazaapEntity.h"
 #import "WazaapTableViewController.h"
